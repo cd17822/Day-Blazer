@@ -25,9 +25,11 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Take photos</string>
+	<string>Capture Video</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Get photos</string>
+	<string>Save Videos</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Video Audio</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

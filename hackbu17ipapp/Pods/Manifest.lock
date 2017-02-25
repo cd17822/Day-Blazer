@@ -2,11 +2,21 @@ PODS:
   - CameraEngine (0.9.3)
 
 DEPENDENCIES:
-  - CameraEngine
+  - CameraEngine (from `https://github.com/Sturtuk/CameraEngineIOS.git`, branch `swift-3.0`)
+
+EXTERNAL SOURCES:
+  CameraEngine:
+    :branch: swift-3.0
+    :git: https://github.com/Sturtuk/CameraEngineIOS.git
+
+CHECKOUT OPTIONS:
+  CameraEngine:
+    :commit: d262fb3d8c92e1edd4b5b1fc4bd885b7df75b3b9
+    :git: https://github.com/Sturtuk/CameraEngineIOS.git
 
 SPEC CHECKSUMS:
   CameraEngine: e24a801f76bfb2e5ff61b11592f82dfc1b4dafc9
 
-PODFILE CHECKSUM: 18846adfbfa76fa1e730da612b9494e483a313b4
+PODFILE CHECKSUM: a2ffce8645a7e8faecb276b7d349ec50a02016c4
 
 COCOAPODS: 1.2.0

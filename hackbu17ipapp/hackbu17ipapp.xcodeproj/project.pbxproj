@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		12D68290F42223E7DCBC046A /* Pods_hackbu17ipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D531EB8EB1BCF8AB2A63481 /* Pods_hackbu17ipapp.framework */; };
+		CB595E791E62510A0019ECA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB595E771E62510A0019ECA6 /* Main.storyboard */; };
 		CB82AD911E622B7A00B85094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD901E622B7A00B85094 /* AppDelegate.swift */; };
 		CB82AD931E622B7A00B85094 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD921E622B7A00B85094 /* ViewController.swift */; };
-		CB82AD961E622B7A00B85094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB82AD941E622B7A00B85094 /* Main.storyboard */; };
 		CB82AD991E622B7A00B85094 /* hackbu17ipapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD971E622B7A00B85094 /* hackbu17ipapp.xcdatamodeld */; };
 		CB82AD9B1E622B7A00B85094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB82AD9A1E622B7A00B85094 /* Assets.xcassets */; };
 		CB82AD9E1E622B7A00B85094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB82AD9C1E622B7A00B85094 /* LaunchScreen.storyboard */; };
@@ -20,10 +20,10 @@
 		2D531EB8EB1BCF8AB2A63481 /* Pods_hackbu17ipapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackbu17ipapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32845D585DFB87CAB953521E /* Pods-hackbu17ipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackbu17ipapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-hackbu17ipapp/Pods-hackbu17ipapp.release.xcconfig"; sourceTree = "<group>"; };
 		5741468C3F248E8A6AE7246C /* Pods-hackbu17ipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackbu17ipapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hackbu17ipapp/Pods-hackbu17ipapp.debug.xcconfig"; sourceTree = "<group>"; };
+		CB595E781E62510A0019ECA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB82AD8D1E622B7A00B85094 /* hackbu17ipapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackbu17ipapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB82AD901E622B7A00B85094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB82AD921E622B7A00B85094 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CB82AD951E622B7A00B85094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB82AD981E622B7A00B85094 /* hackbu17ipapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hackbu17ipapp.xcdatamodel; sourceTree = "<group>"; };
 		CB82AD9A1E622B7A00B85094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB82AD9D1E622B7A00B85094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			children = (
 				CB82AD901E622B7A00B85094 /* AppDelegate.swift */,
 				CB82AD921E622B7A00B85094 /* ViewController.swift */,
-				CB82AD941E622B7A00B85094 /* Main.storyboard */,
+				CB595E771E62510A0019ECA6 /* Main.storyboard */,
 				CB82AD9A1E622B7A00B85094 /* Assets.xcassets */,
 				CB82AD9C1E622B7A00B85094 /* LaunchScreen.storyboard */,
 				CB82AD9F1E622B7A00B85094 /* Info.plist */,
@@ -154,9 +154,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB595E791E62510A0019ECA6 /* Main.storyboard in Resources */,
 				CB82AD9E1E622B7A00B85094 /* LaunchScreen.storyboard in Resources */,
 				CB82AD9B1E622B7A00B85094 /* Assets.xcassets in Resources */,
-				CB82AD961E622B7A00B85094 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,10 +224,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CB82AD941E622B7A00B85094 /* Main.storyboard */ = {
+		CB595E771E62510A0019ECA6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CB82AD951E622B7A00B85094 /* Base */,
+				CB595E781E62510A0019ECA6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -383,6 +383,7 @@
 				CB82ADA41E622B7A00B85094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -9,65 +9,75 @@
 import UIKit
 import AVFoundation
 
-public typealias blockCompletionCapturePhoto = (image: UIImage?, error: NSError?) -> (Void)
-public typealias blockCompletionCaptureVideo = (url: NSURL?, error: NSError?) -> (Void)
-public typealias blockCompletionOutputBuffer = (sampleBuffer: CMSampleBuffer) -> (Void)
-public typealias blockCompletionProgressRecording = (duration: Float64) -> (Void)
+public typealias blockCompletionCapturePhoto = (_ image: UIImage?, _ error: Error?) -> (Void)
+public typealias blockCompletionCapturePhotoBuffer = ((_ sampleBuffer: CMSampleBuffer?, _ error: Error?) -> Void)
+public typealias blockCompletionCaptureVideo = (_ url: URL?, _ error: NSError?) -> (Void)
+public typealias blockCompletionOutputBuffer = (_ sampleBuffer: CMSampleBuffer) -> (Void)
+public typealias blockCompletionProgressRecording = (_ duration: Float64) -> (Void)
 
 extension AVCaptureVideoOrientation {
-    static func orientationFromUIDeviceOrientation(orientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
+    static func orientationFromUIDeviceOrientation(_ orientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
         switch orientation {
-        case .Portrait: return .Portrait
-        case .LandscapeLeft: return .LandscapeRight
-        case .LandscapeRight: return .LandscapeLeft
-        case .PortraitUpsideDown: return .PortraitUpsideDown
-        default: return .Portrait
+        case .portrait: return .portrait
+        case .landscapeLeft: return .landscapeRight
+        case .landscapeRight: return .landscapeLeft
+        case .portraitUpsideDown: return .portraitUpsideDown
+        default: return .portrait
         }
     }
 }
 
 class CameraEngineCaptureOutput: NSObject {
     
-    private let stillCameraOutput = AVCaptureStillImageOutput()
-    private let movieFileOutput = AVCaptureMovieFileOutput()
-    private var captureVideoOutput = AVCaptureVideoDataOutput()
-    private var captureAudioOutput = AVCaptureAudioDataOutput()
-    private var blockCompletionVideo: blockCompletionCaptureVideo?
+    let stillCameraOutput = AVCaptureStillImageOutput()
+    let movieFileOutput = AVCaptureMovieFileOutput()
+    var captureVideoOutput = AVCaptureVideoDataOutput()
+    var captureAudioOutput = AVCaptureAudioDataOutput()
+    var blockCompletionVideo: blockCompletionCaptureVideo?
     
-    private let videoEncoder = CameraEngineVideoEncoder()
+    let videoEncoder = CameraEngineVideoEncoder()
     
     var isRecording = false
     var blockCompletionBuffer: blockCompletionOutputBuffer?
     var blockCompletionProgress: blockCompletionProgressRecording?
-    
-    func capturePhoto(blockCompletion: blockCompletionCapturePhoto) {
-        guard let connectionVideo  = self.stillCameraOutput.connectionWithMediaType(AVMediaTypeVideo) else {
-            blockCompletion(image: nil, error: nil)
+	
+	func capturePhotoBuffer(_ blockCompletion: @escaping blockCompletionCapturePhotoBuffer) {
+		guard let connectionVideo  = self.stillCameraOutput.connection(withMediaType: AVMediaTypeVideo) else {
+			blockCompletion(nil, nil)
+			return
+		}
+		connectionVideo.videoOrientation = AVCaptureVideoOrientation.orientationFromUIDeviceOrientation(UIDevice.current.orientation)
+		self.stillCameraOutput.captureStillImageAsynchronously(from: connectionVideo, completionHandler: blockCompletion)
+	}
+	
+    func capturePhoto(_ blockCompletion: @escaping blockCompletionCapturePhoto) {
+        guard let connectionVideo  = self.stillCameraOutput.connection(withMediaType: AVMediaTypeVideo) else {
+            blockCompletion(nil, nil)
             return
         }
-        connectionVideo.videoOrientation = AVCaptureVideoOrientation.orientationFromUIDeviceOrientation(UIDevice.currentDevice().orientation)
+        connectionVideo.videoOrientation = AVCaptureVideoOrientation.orientationFromUIDeviceOrientation(UIDevice.current.orientation)
         
-        self.stillCameraOutput.captureStillImageAsynchronouslyFromConnection(connectionVideo) { (sampleBuffer: CMSampleBuffer!, err: NSError!) -> Void in
+        self.stillCameraOutput.captureStillImageAsynchronously(from: connectionVideo) { (sampleBuffer: CMSampleBuffer?, err: Error?) -> Void in
             if let err = err {
-                blockCompletion(image: nil, error: err)
+                blockCompletion(nil, err)
             }
             else {
                 if let sampleBuffer = sampleBuffer, let dataImage = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer) {
                     let image = UIImage(data: dataImage)
-                    blockCompletion(image: image, error: nil)
+                    blockCompletion(image, nil)
                 }
                 else {
-                    blockCompletion(image: nil, error: nil)
+                    blockCompletion(nil, nil)
                 }
             }
         }
     }
     
-    func setPressetVideoEncoder(videoEncoderPresset: CameraEngineVideoEncoderEncoderSettings) {
+    func setPressetVideoEncoder(_ videoEncoderPresset: CameraEngineVideoEncoderEncoderSettings) {
         self.videoEncoder.presetSettingEncoder = videoEncoderPresset.configuration()
     }
     
-    func startRecordVideo(blockCompletion: blockCompletionCaptureVideo, url: NSURL) {
+    func startRecordVideo(_ blockCompletion: @escaping blockCompletionCaptureVideo, url: URL) {
         if self.isRecording == false {
             self.videoEncoder.startWriting(url)
             self.isRecording = true
@@ -84,7 +94,7 @@ class CameraEngineCaptureOutput: NSObject {
         self.videoEncoder.stopWriting(self.blockCompletionVideo)
     }
     
-    func configureCaptureOutput(session: AVCaptureSession, sessionQueue: dispatch_queue_t) {
+    func configureCaptureOutput(_ session: AVCaptureSession, sessionQueue: DispatchQueue) {
         if session.canAddOutput(self.captureVideoOutput) {
             session.addOutput(self.captureVideoOutput)
             self.captureVideoOutput.setSampleBufferDelegate(self, queue: sessionQueue)
@@ -102,16 +112,16 @@ class CameraEngineCaptureOutput: NSObject {
 
 extension CameraEngineCaptureOutput: AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate {
     
-    private func progressCurrentBuffer(sampleBuffer: CMSampleBuffer) {
-        if let block = self.blockCompletionProgress where self.isRecording {
-            block(duration: self.videoEncoder.progressCurrentBuffer(sampleBuffer))
+    private func progressCurrentBuffer(_ sampleBuffer: CMSampleBuffer) {
+        if let block = self.blockCompletionProgress, self.isRecording {
+            block(self.videoEncoder.progressCurrentBuffer(sampleBuffer))
         }
     }
     
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         self.progressCurrentBuffer(sampleBuffer)
         if let block = self.blockCompletionBuffer {
-            block(sampleBuffer: sampleBuffer)
+            block(sampleBuffer)
         }
         if CMSampleBufferDataIsReady(sampleBuffer) == false || self.isRecording == false {
             return
@@ -126,16 +136,42 @@ extension CameraEngineCaptureOutput: AVCaptureVideoDataOutputSampleBufferDelegat
 }
 
 extension CameraEngineCaptureOutput: AVCaptureFileOutputRecordingDelegate {
+    /*!
+     @method captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:
+     @abstract
+     Informs the delegate when all pending data has been written to an output file.
+     
+     @param captureOutput
+     The capture file output that has finished writing the file.
+     @param fileURL
+     The file URL of the file that has been written.
+     @param connections
+     An array of AVCaptureConnection objects attached to the file output that provided the data that was written to the file.
+     @param error
+     An error describing what caused the file to stop recording, or nil if there was no error.
+     
+     @discussion
+     This method is called when the file output has finished writing all data to a file whose recording was stopped, either because startRecordingToOutputFileURL:recordingDelegate: or stopRecording were called, or because an error, described by the error parameter, occurred (if no error occurred, the error parameter will be nil). This method will always be called for each recording request, even if no data is successfully written to the file.
+     
+     Clients should not assume that this method will be called on a specific thread.
+     
+     Delegates are required to implement this method.
+     */
+    @available(iOS 4.0, *)
+    public func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
+        // nil
+    }
+
     
-    func captureOutput(captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAtURL fileURL: NSURL!, fromConnections connections: [AnyObject]!) {
+    func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [AnyObject]!) {
         print("start recording ...")
     }
     
-    func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {
+    func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [AnyObject]!, error: Error!) {
         print("end recording video ... \(outputFileURL)")
         print("error : \(error)")
         if let blockCompletionVideo = self.blockCompletionVideo {
-            blockCompletionVideo(url: outputFileURL, error: error)
+            blockCompletionVideo(outputFileURL, error as NSError?)
         }
     }
 }

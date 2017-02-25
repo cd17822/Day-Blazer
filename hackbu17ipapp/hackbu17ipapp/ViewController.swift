@@ -5,235 +5,165 @@
 //  Created by Charles DiGiovanna on 2/25/17.
 //  Copyright © 2017 Charles DiGiovanna. All rights reserved.
 //
-//
-//import UIKit
-//
-//class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    @IBOutlet var pickedImage: UIImageView!
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view, typically from a nib.
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//
-//
-//    @IBAction func tapCameraButton(_ sender: Any) {
-//        // cam
-//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-//            let imagePicker = UIImagePickerController()
-//            imagePicker.delegate = self
-//            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-//            imagePicker.allowsEditing = false
-//            present(imagePicker, animated: true, completion: nil)
-//            print("iffing")
-//        }else{
-//            print("elsing")
-//        }
-//        
-////        // lib
-////        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-////            let imagePicker = UIImagePickerController()
-////            imagePicker.delegate = self
-////            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-////            imagePicker.allowsEditing = true
-////            present(imagePicker, animated: true, completion: nil)
-////            print("iffing2")
-////        }else{
-////            print("elsign2")
-////        }
-////        
-////        // save
-////        let imageData = UIImageJPEGRepresentation(pickedImage.image!, 0.6)
-////        let compressJPEGImage = UIImage(data: imageData!)
-////        UIImageWriteToSavedPhotosAlbum(compressJPEGImage!, nil, nil, nil)
-//    }
-//    
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]) {
-//        pickedImage.image = image
-//        dismiss(animated: true, completion: nil)
-//    }
-//}
-//
-/////////////////////////////////////////////////////////////////////////
-//import UIKit
-//import AVFoundation
-//
-//class ViewController: UIViewController {
-//    
-//    @IBOutlet weak var previewView: UIView!
-//    @IBOutlet weak var capturedImage: UIImageView!
-//    
-//    var captureSession: AVCaptureSession?
-//    var stillImageOutput: AVCapturePhotoOutput?
-//    var previewLayer: AVCaptureVideoPreviewLayer?
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view, typically from a nib.
-//    }
-//    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        captureSession = AVCaptureSession()
-//        captureSession!.sessionPreset = AVCaptureSessionPresetPhoto
-//        
-//        let backCamera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-//        
-//        var error: NSError?
-//        var input: AVCaptureDeviceInput!
-//        do {
-//            input = try AVCaptureDeviceInput(device: backCamera)
-//        } catch let error1 as NSError {
-//            error = error1
-//            input = nil
-//        }
-//        
-//        if error == nil && captureSession!.canAddInput(input) {
-//            captureSession!.addInput(input)
-//            
-//            stillImageOutput = AVCapturePhotoOutput()
-////            stillImageOutput!.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
-//            if captureSession!.canAddOutput(stillImageOutput) {
-//                captureSession!.addOutput(stillImageOutput)
-//                
-//                previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-//                previewLayer!.videoGravity = AVLayerVideoGravityResizeAspect
-//                previewLayer!.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-//                previewView.layer.addSublayer(previewLayer!)
-//                
-//                captureSession!.startRunning()
-//            }
-//        }
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        previewLayer!.frame = previewView.bounds
-//    }
-//    
-//    @IBAction func didPressTakePhoto(_ sender: Any) {
-//        if let videoConnection = stillImageOutput!.connection(withMediaType: AVMediaTypeVideo) {
-//            videoConnection.videoOrientation = AVCaptureVideoOrientation.portrait
-////            stillImageOutput?.capturePhoto(with: videoConnection, delegate: self)
-////            
-////            stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {(sampleBuffer, error) in
-////                if (sampleBuffer != nil) {
-////                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
-////                    let dataProvider = CGDataProviderCreateWithCFData(imageData)
-////                    let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, CGColorRenderingIntent.RenderingIntentDefault)
-////                    
-////                    let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
-////                    self.capturedImage.image = image
-////                }
-////            })
-//        }
-//    }
-//    
-////    @IBAction func didPressTakeAnother(sender: AnyObject) {
-////        captureSession!.startRunning()
-////    }
-//}
 
-//////////////////////////////////////////////////////////////////////////////
+import UIKit
+import CameraEngine
 
-//
-//  ViewController.swift
-//  CameraExample
-//
-//  Created by Geppy Parziale on 2/15/16.
-//  Copyright © 2016 iNVASIVECODE, Inc. All rights reserved.
-//
-///////////////////////////////////////////////////////////////////
-//import UIKit
-//import AVFoundation
-//
-//class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        print("vdl")
-//        setupCameraSession()
-//        print("vdl2")
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        print("vda")
-//        view.layer.addSublayer(previewLayer)
-//        print("vda1.5")
-//        cameraSession.startRunning()
-//        print("vda2")
-//    }
-//    
-//    lazy var cameraSession: AVCaptureSession = {
-//        print("Cs")
-//        let s = AVCaptureSession()
-//        s.sessionPreset = AVCaptureSessionPresetLow
-//        print("Cs2")
-//        return s
-//    }()
-//    
-//    lazy var previewLayer: AVCaptureVideoPreviewLayer = {
-//        print("prl")
-//        let preview =  AVCaptureVideoPreviewLayer(session: self.cameraSession)
-//        preview?.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
-//        preview?.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
-//        preview?.videoGravity = AVLayerVideoGravityResize
-//        print("prl2")
-//        return preview!
-//    }()
-//    
-//    func setupCameraSession() {
-//        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) as AVCaptureDevice
-//        
-//        do {
-//            let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
-//            
-//            cameraSession.beginConfiguration()
-//            
-//            if (cameraSession.canAddInput(deviceInput) == true) {
-//                cameraSession.addInput(deviceInput)
-//            }
-//            
-//            let dataOutput = AVCaptureVideoDataOutput()
-//            dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange as UInt32)]
-//            dataOutput.alwaysDiscardsLateVideoFrames = true
-//            
-//            if (cameraSession.canAddOutput(dataOutput) == true) {
-//                cameraSession.addOutput(dataOutput)
-//            }
-//            
-//            cameraSession.commitConfiguration()
-//            
-//            let queue = DispatchQueue(label: "com.invasivecode.videoQueue")
-//            dataOutput.setSampleBufferDelegate(self, queue: queue)
-//            
-//        }
-//        catch let error as NSError {
-//            print("AHHH error")
-//            NSLog("\(error), \(error.localizedDescription)")
-//        }
-//    }
-//    
-//    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
-//        // Here you collect each frame and process it
-//    }
-//    
-//    func captureOutput(_ captureOutput: AVCaptureOutput!, didDrop sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
-//        // Here you can count how many frames are dopped
-//    }
-//    
-//}
+enum ModeCapture {
+    case Photo
+    case Video
+}
 
-
-
-
+class ViewController: UIViewController {
+    
+    private var cameraEngine = CameraEngine()
+    private var mode: ModeCapture = .Photo
+    
+    @IBOutlet weak var buttonMode: UIButton!
+    @IBOutlet weak var labelMode: UILabel!
+    @IBOutlet weak var buttonTrigger: UIButton!
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        guard let layer = self.cameraEngine.previewLayer else {
+            return
+        }
+        layer.frame = self.view.bounds
+        self.view.layer.insertSublayer(layer, at: 0)
+    }
+    
+    @IBAction func setModeCapture(_ sender: AnyObject) {
+        let alertController = UIAlertController(title: "set mode capture", message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Photo", style: .default, handler: {  _ in
+            self.labelMode.text = "Photo"
+            self.buttonTrigger.setTitle("take picture", for: .normal)
+            self.mode = .Photo
+        }))
+        alertController.addAction(UIAlertAction(title: "Video", style: .default, handler: {  _ in
+            self.labelMode.text = "Video"
+            self.buttonTrigger.setTitle("start recording", for: .normal)
+            self.mode = .Video
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func encoderSettingsPresset(_ sender: AnyObject) {
+        let alertController = UIAlertController(title: "Encoder settings", message: nil, preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Preset640x480", style: .default, handler: { _ in
+            self.cameraEngine.videoEncoderPresset = .Preset640x480
+        }))
+        alertController.addAction(UIAlertAction(title: "Preset960x540", style: .default, handler: { _ in
+            self.cameraEngine.videoEncoderPresset = .Preset960x540
+        }))
+        alertController.addAction(UIAlertAction(title: "Preset1280x720", style: .default, handler: { _ in
+            self.cameraEngine.videoEncoderPresset = .Preset1280x720
+        }))
+        alertController.addAction(UIAlertAction(title: "Preset1920x1080", style: .default, handler: { _ in
+            self.cameraEngine.videoEncoderPresset = .Preset1920x1080
+        }))
+        alertController.addAction(UIAlertAction(title: "Preset3840x2160", style: .default, handler: { _ in
+            self.cameraEngine.videoEncoderPresset = .Preset3840x2160
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func setZoomCamera(_ sender: AnyObject) {
+        let alertController = UIAlertController(title: "set zoom factor", message: nil, preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "X1", style: .default, handler: { _ in
+            self.cameraEngine.cameraZoomFactor = 1
+        }))
+        alertController.addAction(UIAlertAction(title: "X2", style: .default, handler: { _ in
+            self.cameraEngine.cameraZoomFactor = 2
+        }))
+        alertController.addAction(UIAlertAction(title: "X3", style: .default, handler: { _ in
+            self.cameraEngine.cameraZoomFactor = 3
+        }))
+        alertController.addAction(UIAlertAction(title: "X4", style: .default, handler: { _ in
+            self.cameraEngine.cameraZoomFactor = 4
+        }))
+        alertController.addAction(UIAlertAction(title: "X5", style: .default, handler: { _ in
+            self.cameraEngine.cameraZoomFactor = 5
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func setFocus(_ sender: AnyObject) {
+        let alertController = UIAlertController(title: "set focus settings", message: nil, preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Locked", style: .default, handler: { _ in
+            self.cameraEngine.cameraFocus = CameraEngineCameraFocus.locked
+        }))
+        alertController.addAction(UIAlertAction(title: "auto focus", style: .default, handler: { _ in
+            self.cameraEngine.cameraFocus = CameraEngineCameraFocus.autoFocus
+        }))
+        alertController.addAction(UIAlertAction(title: "continious auto focus", style: .default, handler: { _ in
+            self.cameraEngine.cameraFocus = CameraEngineCameraFocus.continuousAutoFocus
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func switchCamera(_ sender: AnyObject) {
+        self.cameraEngine.switchCurrentDevice()
+    }
+    
+    @IBAction func takePhoto(_ sender: AnyObject) {
+        switch self.mode {
+        case .Photo:
+            self.cameraEngine.capturePhoto { (image , error) -> (Void) in
+                if let image = image {
+                    CameraEngineFileManager.savePhoto(image, blockCompletion: { (success, error) -> (Void) in
+                        if success {
+                            let alertController =  UIAlertController(title: "Success, image saved !", message: nil, preferredStyle: .alert)
+                            alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    })
+                }
+            }
+        case .Video:
+            if !self.cameraEngine.isRecording {
+                if let url = CameraEngineFileManager.temporaryPath("video.mp4") {
+                    self.buttonTrigger.setTitle("stop recording", for: .normal)
+                    self.cameraEngine.startRecordingVideo(url, blockCompletion: { (url: URL?, error: NSError?) -> (Void) in
+                        if let url = url {
+                            DispatchQueue.main.async {
+                                self.buttonTrigger.setTitle("start recording", for: .normal)
+                                CameraEngineFileManager.saveVideo(url, blockCompletion: { (success: Bool, error: Error?) -> (Void) in
+                                    if success {
+                                        let alertController =  UIAlertController(title: "Success, video saved !", message: nil, preferredStyle: .alert)
+                                        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                                        self.present(alertController, animated: true, completion: nil)
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+            else {
+                self.cameraEngine.stopRecordingVideo()
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.cameraEngine.rotationCamera = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.cameraEngine.startSession()
+    }
+}
 
 
 
