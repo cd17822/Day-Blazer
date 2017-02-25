@@ -1,0 +1,12 @@
+PODS:
+  - CameraEngine (0.9.3)
+
+DEPENDENCIES:
+  - CameraEngine
+
+SPEC CHECKSUMS:
+  CameraEngine: e24a801f76bfb2e5ff61b11592f82dfc1b4dafc9
+
+PODFILE CHECKSUM: 18846adfbfa76fa1e730da612b9494e483a313b4
+
+COCOAPODS: 1.2.0

@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		375EB3761186E584D17C37B798756D5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		407E25EE54A35E2EAA223886761ACB6B /* CameraEngine-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C7AE504060D59605D85F61535EA6E7 /* CameraEngine-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46E2257A9AEDCFEF7D2B0EA49DCEFAA0 /* CameraEngineDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D308337DDE330F24D7BABF3AAB5D5 /* CameraEngineDevice.swift */; };
+		52316F9717DA5FB4BD2B38486A0728BF /* CameraEngineVideoEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611D75AC7E94EBC2C3F9932CF68A01A /* CameraEngineVideoEncoder.swift */; };
+		61D99FF584B117AE33F285B2DFB902FE /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 4390FE760517920379A9A8E1998129F8 /* Info.plist */; };
+		732758FB222F83DEC45DAA38B4935DD3 /* CameraEngineFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49D857994DE383EE8E62A420BFD9820 /* CameraEngineFileManager.swift */; };
+		79645E9E861827A0C04F29FAC58C4397 /* CameraEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2183DAC17766528458DB09CF1D9F2F5 /* CameraEngine.swift */; };
+		8AC852FD1AD8E5371272CC57AD3C9B63 /* Pods-hackbu17ipapp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E05C19A58E6A270FC425F1772FED6C /* Pods-hackbu17ipapp-dummy.m */; };
+		A42DE140F692E43B938F0D202A637FF0 /* CameraEngineMetadataOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF5E96D0B7C601417F995BF9F69A7D /* CameraEngineMetadataOutput.swift */; };
+		BC09114AB55AA3AE7E7CED05D7146025 /* CameraEngineCaptureOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590265DC3038A84D067FBB174548CF6 /* CameraEngineCaptureOutput.swift */; };
+		BF9D0800E960640AED6816AF8D412F80 /* CameraEngine-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BB88172FE218566292593EC30F60D /* CameraEngine-dummy.m */; };
+		C8A693EC93BDAA287C4403BCD93B86DB /* CameraEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 397830954E112D3A6B6C3625A9DECF7E /* CameraEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9570D05585FC70345C9BCF2F90A4522 /* Pods-hackbu17ipapp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19BD609ED2E2A21DB60B098AB2DBB282 /* Pods-hackbu17ipapp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1885C20D61D83144253BFCD82A8FD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		F5E90CA19EE992CCCEF3ABF6AEF61041 /* CameraEngineDeviceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E021265EA2248479877AF2E483B80B /* CameraEngineDeviceInput.swift */; };
+		FD56203FD6B9CDACA8F8D1C15A3B5842 /* CameraEngineGifEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8509BBBA9137ECDEF3B00466CCEF81 /* CameraEngineGifEncoder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4273F2B34DAC9CA509E56C0CC3631036 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CA1491EAC783E2F4553C2FE411AFEE;
+			remoteInfo = CameraEngine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		159FDA85C07A335D8A016B38BE847B79 /* CameraEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CameraEngine.modulemap; sourceTree = "<group>"; };
+		19BD609ED2E2A21DB60B098AB2DBB282 /* Pods-hackbu17ipapp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-hackbu17ipapp-umbrella.h"; sourceTree = "<group>"; };
+		1CC114E072615558F3BA79D3B0959A4A /* CameraEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CameraEngine.framework; path = CameraEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2178F954748567DAE197C54B0E3D1441 /* Pods-hackbu17ipapp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-hackbu17ipapp.modulemap"; sourceTree = "<group>"; };
+		246E805BD8397934E924F002E2DA79B7 /* Pods-hackbu17ipapp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-hackbu17ipapp-frameworks.sh"; sourceTree = "<group>"; };
+		397830954E112D3A6B6C3625A9DECF7E /* CameraEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CameraEngine.h; path = CameraEngine/CameraEngine.h; sourceTree = "<group>"; };
+		41E05C19A58E6A270FC425F1772FED6C /* Pods-hackbu17ipapp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-hackbu17ipapp-dummy.m"; sourceTree = "<group>"; };
+		4390FE760517920379A9A8E1998129F8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = CameraEngine/Info.plist; sourceTree = "<group>"; };
+		4F7FE677A3AB656C169DFB97DE35A6EB /* Pods-hackbu17ipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-hackbu17ipapp.release.xcconfig"; sourceTree = "<group>"; };
+		503860E3CF09E8BB83651132BDDA0F75 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		683E75F732CB1DB4F281F2B77425690E /* CameraEngine-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CameraEngine-prefix.pch"; sourceTree = "<group>"; };
+		7590265DC3038A84D067FBB174548CF6 /* CameraEngineCaptureOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraEngineCaptureOutput.swift; path = CameraEngine/CameraEngineCaptureOutput.swift; sourceTree = "<group>"; };
+		7BB2B4189FC94C8EFFEB643337EEE830 /* Pods-hackbu17ipapp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-hackbu17ipapp-acknowledgements.plist"; sourceTree = "<group>"; };
+		83F62284E742C0A6445CF6E3922D7107 /* Pods-hackbu17ipapp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-hackbu17ipapp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8A8509BBBA9137ECDEF3B00466CCEF81 /* CameraEngineGifEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraEngineGifEncoder.swift; path = CameraEngine/CameraEngineGifEncoder.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A49D857994DE383EE8E62A420BFD9820 /* CameraEngineFileManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraEngineFileManager.swift; path = CameraEngine/CameraEngineFileManager.swift; sourceTree = "<group>"; };
+		A80EC45E822BE3A3AB5C010E4BE171B1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C7AE504060D59605D85F61535EA6E7 /* CameraEngine-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CameraEngine-umbrella.h"; sourceTree = "<group>"; };
+		B519232D5F29830EBCBB75D175844170 /* Pods-hackbu17ipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-hackbu17ipapp.debug.xcconfig"; sourceTree = "<group>"; };
+		B611D75AC7E94EBC2C3F9932CF68A01A /* CameraEngineVideoEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraEngineVideoEncoder.swift; path = CameraEngine/CameraEngineVideoEncoder.swift; sourceTree = "<group>"; };
+		BB3BB88172FE218566292593EC30F60D /* CameraEngine-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CameraEngine-dummy.m"; sourceTree = "<group>"; };
+		BDC46A2923A45FFEA4AB77F534815AD9 /* Pods_hackbu17ipapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_hackbu17ipapp.framework; path = "Pods-hackbu17ipapp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFA0F95046B39D8B55820E5F60673374 /* Pods-hackbu17ipapp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-hackbu17ipapp-resources.sh"; sourceTree = "<group>"; };
+		C7AF5E96D0B7C601417F995BF9F69A7D /* CameraEngineMetadataOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraEngineMetadataOutput.swift; path = CameraEngine/CameraEngineMetadataOutput.swift; sourceTree = "<group>"; };
+		CB475D2F91BE92B53AA29B66964581D9 /* CameraEngine.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CameraEngine.xcconfig; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D2183DAC17766528458DB09CF1D9F2F5 /* CameraEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraEngine.swift; path = CameraEngine/CameraEngine.swift; sourceTree = "<group>"; };
+		E7E021265EA2248479877AF2E483B80B /* CameraEngineDeviceInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraEngineDeviceInput.swift; path = CameraEngine/CameraEngineDeviceInput.swift; sourceTree = "<group>"; };
+		F88D308337DDE330F24D7BABF3AAB5D5 /* CameraEngineDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraEngineDevice.swift; path = CameraEngine/CameraEngineDevice.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70E187E13E673682DEB3CA388351B346 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1885C20D61D83144253BFCD82A8FD3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98985534B6FEBC2C507C1B091E932359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				375EB3761186E584D17C37B798756D5B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D508A0C1654947776BEF9BBF2D57291 /* Pods-hackbu17ipapp */ = {
+			isa = PBXGroup;
+			children = (
+				A80EC45E822BE3A3AB5C010E4BE171B1 /* Info.plist */,
+				2178F954748567DAE197C54B0E3D1441 /* Pods-hackbu17ipapp.modulemap */,
+				83F62284E742C0A6445CF6E3922D7107 /* Pods-hackbu17ipapp-acknowledgements.markdown */,
+				7BB2B4189FC94C8EFFEB643337EEE830 /* Pods-hackbu17ipapp-acknowledgements.plist */,
+				41E05C19A58E6A270FC425F1772FED6C /* Pods-hackbu17ipapp-dummy.m */,
+				246E805BD8397934E924F002E2DA79B7 /* Pods-hackbu17ipapp-frameworks.sh */,
+				BFA0F95046B39D8B55820E5F60673374 /* Pods-hackbu17ipapp-resources.sh */,
+				19BD609ED2E2A21DB60B098AB2DBB282 /* Pods-hackbu17ipapp-umbrella.h */,
+				B519232D5F29830EBCBB75D175844170 /* Pods-hackbu17ipapp.debug.xcconfig */,
+				4F7FE677A3AB656C169DFB97DE35A6EB /* Pods-hackbu17ipapp.release.xcconfig */,
+			);
+			name = "Pods-hackbu17ipapp";
+			path = "Target Support Files/Pods-hackbu17ipapp";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C7390BD1DD386DC600E75627E97E0A52 /* Pods */,
+				F9C26D9D9B221A7AF7A6F81A5C4B970F /* Products */,
+				E02A60AC7B651B5155B3C961346D3994 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		ADCD3183FC51FB5EA5C5ADCA2B148E13 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				159FDA85C07A335D8A016B38BE847B79 /* CameraEngine.modulemap */,
+				CB475D2F91BE92B53AA29B66964581D9 /* CameraEngine.xcconfig */,
+				BB3BB88172FE218566292593EC30F60D /* CameraEngine-dummy.m */,
+				683E75F732CB1DB4F281F2B77425690E /* CameraEngine-prefix.pch */,
+				B0C7AE504060D59605D85F61535EA6E7 /* CameraEngine-umbrella.h */,
+				503860E3CF09E8BB83651132BDDA0F75 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CameraEngine";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7390BD1DD386DC600E75627E97E0A52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0928FCC88186B594CABD06EFFBDD1C0 /* CameraEngine */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E02A60AC7B651B5155B3C961346D3994 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D508A0C1654947776BEF9BBF2D57291 /* Pods-hackbu17ipapp */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E0928FCC88186B594CABD06EFFBDD1C0 /* CameraEngine */ = {
+			isa = PBXGroup;
+			children = (
+				397830954E112D3A6B6C3625A9DECF7E /* CameraEngine.h */,
+				D2183DAC17766528458DB09CF1D9F2F5 /* CameraEngine.swift */,
+				7590265DC3038A84D067FBB174548CF6 /* CameraEngineCaptureOutput.swift */,
+				F88D308337DDE330F24D7BABF3AAB5D5 /* CameraEngineDevice.swift */,
+				E7E021265EA2248479877AF2E483B80B /* CameraEngineDeviceInput.swift */,
+				A49D857994DE383EE8E62A420BFD9820 /* CameraEngineFileManager.swift */,
+				8A8509BBBA9137ECDEF3B00466CCEF81 /* CameraEngineGifEncoder.swift */,
+				C7AF5E96D0B7C601417F995BF9F69A7D /* CameraEngineMetadataOutput.swift */,
+				B611D75AC7E94EBC2C3F9932CF68A01A /* CameraEngineVideoEncoder.swift */,
+				4390FE760517920379A9A8E1998129F8 /* Info.plist */,
+				ADCD3183FC51FB5EA5C5ADCA2B148E13 /* Support Files */,
+			);
+			name = CameraEngine;
+			path = CameraEngine;
+			sourceTree = "<group>";
+		};
+		F9C26D9D9B221A7AF7A6F81A5C4B970F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CC114E072615558F3BA79D3B0959A4A /* CameraEngine.framework */,
+				BDC46A2923A45FFEA4AB77F534815AD9 /* Pods_hackbu17ipapp.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7B5536200C204B1488F7CE08DDADB4CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9570D05585FC70345C9BCF2F90A4522 /* Pods-hackbu17ipapp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE61290255D3EF4911EB7BF99605CD0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407E25EE54A35E2EAA223886761ACB6B /* CameraEngine-umbrella.h in Headers */,
+				C8A693EC93BDAA287C4403BCD93B86DB /* CameraEngine.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		89CA1491EAC783E2F4553C2FE411AFEE /* CameraEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8648F2D69DBF591D5B361F72439E753F /* Build configuration list for PBXNativeTarget "CameraEngine" */;
+			buildPhases = (
+				8CA87B1C99C54F53E44D3C7EE32EA988 /* Sources */,
+				98985534B6FEBC2C507C1B091E932359 /* Frameworks */,
+				7FE61290255D3EF4911EB7BF99605CD0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CameraEngine;
+			productName = CameraEngine;
+			productReference = 1CC114E072615558F3BA79D3B0959A4A /* CameraEngine.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F9015B46749EEDC7460402D197242218 /* Pods-hackbu17ipapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11927B099B955ADA150CB59F95177D0F /* Build configuration list for PBXNativeTarget "Pods-hackbu17ipapp" */;
+			buildPhases = (
+				70F9D55F521D8569DDD7E1B99A465E64 /* Sources */,
+				70E187E13E673682DEB3CA388351B346 /* Frameworks */,
+				7B5536200C204B1488F7CE08DDADB4CD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E783C9D7994CC5884358E1EEF4C55382 /* PBXTargetDependency */,
+			);
+			name = "Pods-hackbu17ipapp";
+			productName = "Pods-hackbu17ipapp";
+			productReference = BDC46A2923A45FFEA4AB77F534815AD9 /* Pods_hackbu17ipapp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = F9C26D9D9B221A7AF7A6F81A5C4B970F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89CA1491EAC783E2F4553C2FE411AFEE /* CameraEngine */,
+				F9015B46749EEDC7460402D197242218 /* Pods-hackbu17ipapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70F9D55F521D8569DDD7E1B99A465E64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AC852FD1AD8E5371272CC57AD3C9B63 /* Pods-hackbu17ipapp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CA87B1C99C54F53E44D3C7EE32EA988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF9D0800E960640AED6816AF8D412F80 /* CameraEngine-dummy.m in Sources */,
+				79645E9E861827A0C04F29FAC58C4397 /* CameraEngine.swift in Sources */,
+				BC09114AB55AA3AE7E7CED05D7146025 /* CameraEngineCaptureOutput.swift in Sources */,
+				46E2257A9AEDCFEF7D2B0EA49DCEFAA0 /* CameraEngineDevice.swift in Sources */,
+				F5E90CA19EE992CCCEF3ABF6AEF61041 /* CameraEngineDeviceInput.swift in Sources */,
+				732758FB222F83DEC45DAA38B4935DD3 /* CameraEngineFileManager.swift in Sources */,
+				FD56203FD6B9CDACA8F8D1C15A3B5842 /* CameraEngineGifEncoder.swift in Sources */,
+				A42DE140F692E43B938F0D202A637FF0 /* CameraEngineMetadataOutput.swift in Sources */,
+				52316F9717DA5FB4BD2B38486A0728BF /* CameraEngineVideoEncoder.swift in Sources */,
+				61D99FF584B117AE33F285B2DFB902FE /* Info.plist in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E783C9D7994CC5884358E1EEF4C55382 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CameraEngine;
+			target = 89CA1491EAC783E2F4553C2FE411AFEE /* CameraEngine */;
+			targetProxy = 4273F2B34DAC9CA509E56C0CC3631036 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		123A10118BDDA7EC3B4EEC22C5F76093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB475D2F91BE92B53AA29B66964581D9 /* CameraEngine.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CameraEngine/CameraEngine-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CameraEngine/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CameraEngine/CameraEngine.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CameraEngine;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		639574BAF329624AE262CA912F2E523D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B519232D5F29830EBCBB75D175844170 /* Pods-hackbu17ipapp.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-hackbu17ipapp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-hackbu17ipapp/Pods-hackbu17ipapp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_hackbu17ipapp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88C582433AE7E8284F13AFA6C91FB5D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F7FE677A3AB656C169DFB97DE35A6EB /* Pods-hackbu17ipapp.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-hackbu17ipapp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-hackbu17ipapp/Pods-hackbu17ipapp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_hackbu17ipapp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C23AF1F0DE27A6E3E452C6095E8BD24E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB475D2F91BE92B53AA29B66964581D9 /* CameraEngine.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CameraEngine/CameraEngine-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CameraEngine/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CameraEngine/CameraEngine.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CameraEngine;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11927B099B955ADA150CB59F95177D0F /* Build configuration list for PBXNativeTarget "Pods-hackbu17ipapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639574BAF329624AE262CA912F2E523D /* Debug */,
+				88C582433AE7E8284F13AFA6C91FB5D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8648F2D69DBF591D5B361F72439E753F /* Build configuration list for PBXNativeTarget "CameraEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				123A10118BDDA7EC3B4EEC22C5F76093 /* Debug */,
+				C23AF1F0DE27A6E3E452C6095E8BD24E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
