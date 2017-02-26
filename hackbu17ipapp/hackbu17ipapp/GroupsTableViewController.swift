@@ -10,6 +10,7 @@ import UIKit
 
 class GroupsTableViewController: UITableViewController {
     var data = [Group]()
+    var alertTextField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class GroupsTableViewController: UITableViewController {
         data.append(Group(id: "1782217822", name: "Squad"))
     }
 
-    // MARK: - Table view data source
+    // MARK: - Personal
 
     func configureNib() {
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
@@ -41,6 +42,33 @@ class GroupsTableViewController: UITableViewController {
     @IBAction func camTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func addGroupTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "New Group", message: "Enter the name of the group you'd like to create.", preferredStyle:
+            UIAlertControllerStyle.alert)
+        
+        alert.addTextField(configurationHandler: textFieldHandler)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ (UIAlertAction)in
+            self.addGroup(withName: self.alertTextField!.text!)
+        }))
+        
+        self.present(alert, animated: true, completion:nil)
+    }
+    
+    func textFieldHandler(textField: UITextField!) {
+        textField.placeholder = "Group Name"
+        textField.text = ""
+        self.alertTextField = textField
+    }
+    
+    func addGroup(withName groupName: String) {
+        // TODO REQUEST
+    }
+    
+    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -101,12 +129,14 @@ class GroupsTableViewController: UITableViewController {
         performSegue(withIdentifier: "GroupsToGroupUsers", sender: data[(indexPath as NSIndexPath).row])
     }
     
-    /*
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "GroupsToGroupUsers" {
+            let vc = segue.destination as! GroupUsersTableViewController
+            
+            vc.group = sender as? Group
+        }
     }
-    */
 
 }

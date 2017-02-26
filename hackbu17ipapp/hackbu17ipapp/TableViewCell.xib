@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charlie DiGiovanna" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78b-aC-rdT">
-                        <rect key="frame" x="8" y="5.5" width="289" height="32.5"/>
+                        <rect key="frame" x="18" y="5.5" width="289" height="32.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17822" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBb-78-emX">
-                        <rect key="frame" x="8" y="40" width="289" height="24"/>
+                        <rect key="frame" x="18" y="40" width="289" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="289" id="jIz-dJ-J6u"/>
                         </constraints>
@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG9-CZ-b25">
-                        <rect key="frame" x="8" y="17" width="289" height="32.5"/>
+                        <rect key="frame" x="18" y="17" width="289" height="32.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                 <constraints>
                     <constraint firstItem="NG9-CZ-b25" firstAttribute="leading" secondItem="78b-aC-rdT" secondAttribute="leading" id="Bcc-0P-6Zh"/>
                     <constraint firstItem="xBb-78-emX" firstAttribute="top" secondItem="78b-aC-rdT" secondAttribute="bottom" constant="2" id="Gbv-qs-ubB"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="78b-aC-rdT" secondAttribute="leading" id="Iu7-RZ-2aq"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="78b-aC-rdT" secondAttribute="leading" constant="-10" id="Iu7-RZ-2aq"/>
                     <constraint firstItem="xBb-78-emX" firstAttribute="leading" secondItem="78b-aC-rdT" secondAttribute="leading" id="Kxv-bN-jAe"/>
                     <constraint firstItem="78b-aC-rdT" firstAttribute="centerY" secondItem="SVH-oe-Ug9" secondAttribute="centerY" constant="-12" id="Zej-mg-NfO"/>
                     <constraint firstItem="78b-aC-rdT" firstAttribute="width" secondItem="xBb-78-emX" secondAttribute="width" id="ilh-nf-UZp"/>

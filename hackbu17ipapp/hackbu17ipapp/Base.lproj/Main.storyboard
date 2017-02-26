@@ -148,11 +148,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GroupCell" selectionStyle="default" indentationWidth="10" id="SVA-OC-xeF" customClass="TableViewCell" customModule="hackbu17ipapp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GroupCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="SVA-OC-xeF" customClass="TableViewCell" customModule="hackbu17ipapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SVA-OC-xeF" id="mtp-cX-TQ9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -171,6 +171,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ES4-lS-k9e">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addGroupTapped:" destination="uzq-ID-gk9" id="OX5-u3-mAh"/>
+                            </connections>
                         </barButtonItem>
                         <connections>
                             <outlet property="leftBarButtonItem" destination="sSq-jl-jBG" id="zpi-Pe-hqQ"/>
@@ -184,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="1516" y="125"/>
         </scene>
-        <!--Title-->
+        <!--Users-->
         <scene sceneID="JVd-ZV-UJi">
             <objects>
                 <tableViewController id="Hcf-3R-iAu" customClass="GroupUsersTableViewController" customModule="hackbu17ipapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,11 +196,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ehd-09-JhS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="Ehd-09-JhS">
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ehd-09-JhS" id="arO-Z5-BIS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -207,46 +210,41 @@
                             <outlet property="delegate" destination="Hcf-3R-iAu" id="J8W-5s-6eT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="9CF-xa-7m3">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="camera" id="99G-ws-xY2">
+                    <navigationItem key="navigationItem" title="Users" id="9CF-xa-7m3">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="9gq-Fk-q0l"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="nIu-3a-JMN">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="nIu-3a-JMN">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addUserTapped:" destination="Hcf-3R-iAu" id="dYT-bt-OGQ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="6Mh-Ka-wVA" kind="show" identifier="GroupUsersToUser" id="Acc-Vf-f2h"/>
+                        <segue destination="UVi-Jj-uFz" kind="show" identifier="GroupUsersToUser" id="Bvb-VX-eT8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9V-oR-YDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2214" y="125"/>
+            <point key="canvasLocation" x="2263" y="125"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="qdA-Cf-chy">
+        <!--User-->
+        <scene sceneID="DsM-ja-qmV">
             <objects>
-                <collectionViewController id="6Mh-Ka-wVA" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LFb-8j-CJD">
+                <viewController id="UVi-Jj-uFz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3dq-Gw-JcF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ts3-Db-jJH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YkZ-mf-1h0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TEh-tu-h2i">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="6Mh-Ka-wVA" id="ExT-uZ-Qua"/>
-                            <outlet property="delegate" destination="6Mh-Ka-wVA" id="H4U-1D-3Wu"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sba-eb-9b7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="User" id="ZSm-fo-qyn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZ2-NK-Zgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2906" y="125"/>
+            <point key="canvasLocation" x="3020" y="125"/>
         </scene>
     </scenes>
     <resources>

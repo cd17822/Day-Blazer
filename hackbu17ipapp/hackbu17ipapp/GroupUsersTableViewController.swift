@@ -9,7 +9,9 @@
 import UIKit
 
 class GroupUsersTableViewController: UITableViewController {
+    var group: Group?
     var data = [User]()
+    var alertTextField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,33 @@ class GroupUsersTableViewController: UITableViewController {
     
     func createFakeData() {
         data.append(User(id: "1782217822", name: "Charlie D", username: "cd17822", score: 17))
+    }
+    
+    // MARK: - Personal
+    
+    @IBAction func addUserTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Add User", message: "Enter the username of you'd like to add to \(group!.name).", preferredStyle:
+            UIAlertControllerStyle.alert)
+        
+        alert.addTextField(configurationHandler: textFieldHandler)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ (UIAlertAction)in
+            self.addUser(byUsername: self.alertTextField!.text!)
+        }))
+        
+        self.present(alert, animated: true, completion:nil)
+    }
+    
+    func textFieldHandler(textField: UITextField!) {
+        textField.placeholder = "Username"
+        textField.text = ""
+        self.alertTextField = textField
+    }
+    
+    func addUser(byUsername username: String) {
+        // TODO REQUEST
     }
     
     // MARK: - Table view data source
@@ -98,7 +127,7 @@ class GroupUsersTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "GroupUserstoUser", sender: data[(indexPath as NSIndexPath).row])
+        performSegue(withIdentifier: "GroupUsersToUser", sender: data[(indexPath as NSIndexPath).row])
     }
     
     /*
