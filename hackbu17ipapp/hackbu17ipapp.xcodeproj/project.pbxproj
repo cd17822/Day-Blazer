@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		12D68290F42223E7DCBC046A /* Pods_hackbu17ipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D531EB8EB1BCF8AB2A63481 /* Pods_hackbu17ipapp.framework */; };
 		CB595E791E62510A0019ECA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB595E771E62510A0019ECA6 /* Main.storyboard */; };
+		CB595E7D1E62685B0019ECA6 /* BrowsingNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB595E7C1E62685B0019ECA6 /* BrowsingNavViewController.swift */; };
+		CB595E7F1E6274DC0019ECA6 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB595E7E1E6274DC0019ECA6 /* GroupsTableViewController.swift */; };
+		CB595E811E62757C0019ECA6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB595E801E62757C0019ECA6 /* Group.swift */; };
+		CB595E831E6275FD0019ECA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB595E821E6275FD0019ECA6 /* User.swift */; };
 		CB82AD911E622B7A00B85094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD901E622B7A00B85094 /* AppDelegate.swift */; };
 		CB82AD931E622B7A00B85094 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD921E622B7A00B85094 /* ViewController.swift */; };
 		CB82AD991E622B7A00B85094 /* hackbu17ipapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD971E622B7A00B85094 /* hackbu17ipapp.xcdatamodeld */; };
@@ -21,6 +25,10 @@
 		32845D585DFB87CAB953521E /* Pods-hackbu17ipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackbu17ipapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-hackbu17ipapp/Pods-hackbu17ipapp.release.xcconfig"; sourceTree = "<group>"; };
 		5741468C3F248E8A6AE7246C /* Pods-hackbu17ipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackbu17ipapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hackbu17ipapp/Pods-hackbu17ipapp.debug.xcconfig"; sourceTree = "<group>"; };
 		CB595E781E62510A0019ECA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB595E7C1E62685B0019ECA6 /* BrowsingNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowsingNavViewController.swift; sourceTree = "<group>"; };
+		CB595E7E1E6274DC0019ECA6 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		CB595E801E62757C0019ECA6 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		CB595E821E6275FD0019ECA6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB82AD8D1E622B7A00B85094 /* hackbu17ipapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackbu17ipapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB82AD901E622B7A00B85094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB82AD921E622B7A00B85094 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +90,10 @@
 			children = (
 				CB82AD901E622B7A00B85094 /* AppDelegate.swift */,
 				CB82AD921E622B7A00B85094 /* ViewController.swift */,
+				CB595E7C1E62685B0019ECA6 /* BrowsingNavViewController.swift */,
+				CB595E7E1E6274DC0019ECA6 /* GroupsTableViewController.swift */,
+				CB595E801E62757C0019ECA6 /* Group.swift */,
+				CB595E821E6275FD0019ECA6 /* User.swift */,
 				CB595E771E62510A0019ECA6 /* Main.storyboard */,
 				CB82AD9A1E622B7A00B85094 /* Assets.xcassets */,
 				CB82AD9C1E622B7A00B85094 /* LaunchScreen.storyboard */,
@@ -216,8 +228,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB82AD931E622B7A00B85094 /* ViewController.swift in Sources */,
+				CB595E7F1E6274DC0019ECA6 /* GroupsTableViewController.swift in Sources */,
 				CB82AD991E622B7A00B85094 /* hackbu17ipapp.xcdatamodeld in Sources */,
+				CB595E811E62757C0019ECA6 /* Group.swift in Sources */,
 				CB82AD911E622B7A00B85094 /* AppDelegate.swift in Sources */,
+				CB595E7D1E62685B0019ECA6 /* BrowsingNavViewController.swift in Sources */,
+				CB595E831E6275FD0019ECA6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

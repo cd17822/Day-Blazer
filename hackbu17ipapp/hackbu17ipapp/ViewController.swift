@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CamVC.swift
 //  hackbu17ipapp
 //
 //  Created by Charles DiGiovanna on 2/25/17.
@@ -14,10 +14,11 @@ enum ModeCapture {
     case Video
 }
 
-class ViewController: UIViewController {
+class CamVC: UIViewController {
     private var cameraEngine = CameraEngine()
     private var mode: ModeCapture = .Video
     
+    @IBOutlet var groupsButton: UIButton!
     @IBOutlet var chleft: UIView!
     @IBOutlet var chright: UIView!
     @IBOutlet var chbottom: UIView!
@@ -84,27 +85,8 @@ class ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func setZoomCamera(_ sender: AnyObject) {
-        let alertController = UIAlertController(title: "set zoom factor", message: nil, preferredStyle: .actionSheet)
-        
-        alertController.addAction(UIAlertAction(title: "X1", style: .default, handler: { _ in
-            self.cameraEngine.cameraZoomFactor = 1
-        }))
-        alertController.addAction(UIAlertAction(title: "X2", style: .default, handler: { _ in
-            self.cameraEngine.cameraZoomFactor = 2
-        }))
-        alertController.addAction(UIAlertAction(title: "X3", style: .default, handler: { _ in
-            self.cameraEngine.cameraZoomFactor = 3
-        }))
-        alertController.addAction(UIAlertAction(title: "X4", style: .default, handler: { _ in
-            self.cameraEngine.cameraZoomFactor = 4
-        }))
-        alertController.addAction(UIAlertAction(title: "X5", style: .default, handler: { _ in
-            self.cameraEngine.cameraZoomFactor = 5
-        }))
-        
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+    @IBAction func sliding(_ sender: Any) {
+        cameraEngine.cameraZoomFactor = CGFloat(slider.value)
     }
     
     @IBAction func setFocus(_ sender: AnyObject) {
@@ -151,7 +133,7 @@ class ViewController: UIViewController {
                         ch.isHidden = false
                     }
                     slider.isHidden = false
-                    
+                    groupsButton.isEnabled = false
                     
                     
                     self.cameraEngine.startRecordingVideo(url, blockCompletion: { (url: URL?, error: NSError?) -> (Void) in
@@ -165,13 +147,15 @@ class ViewController: UIViewController {
                                     ch.isHidden = true
                                 }
                                 self.slider.isHidden = true
-                                
+                                self.slider.value = 1.0
+                                self.cameraEngine.cameraZoomFactor = CGFloat(self.slider.value)
+                                self.groupsButton.isEnabled = true
                                 
                                 
                                 
                                 CameraEngineFileManager.saveVideo(url, blockCompletion: { (success: Bool, error: Error?) -> (Void) in
                                     if success {
-                                        let alertController =  UIAlertController(title: "Success, video saved !", message: nil, preferredStyle: .alert)
+                                        let alertController =  UIAlertController(title: "Got em!", message: nil, preferredStyle: .alert)
                                         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                                         self.present(alertController, animated: true, completion: nil)
                                     }
@@ -185,6 +169,9 @@ class ViewController: UIViewController {
                 self.cameraEngine.stopRecordingVideo()
             }
         }
+    }
+    @IBAction func groupsTapped(_ sender: Any) {
+        performSegue(withIdentifier: "CamVCToGroups", sender: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
