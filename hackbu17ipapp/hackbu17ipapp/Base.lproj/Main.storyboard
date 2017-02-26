@@ -387,13 +387,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wj-KW-T7g">
-                                <rect key="frame" x="195" y="430" width="164" height="217"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZf-tm-dSJ">
-                                <rect key="frame" x="16" y="430" width="164" height="217"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-02-26 at 12.48.00 PM" translatesAutoresizingMaskIntoConstraints="NO" id="bZf-tm-dSJ">
+                                <rect key="frame" x="82" y="430" width="210" height="217"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="ECk-Mm-OJL"/>
+                                    <constraint firstAttribute="height" constant="217" id="rAg-pH-gr8"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -401,6 +400,7 @@
                             <constraint firstItem="beu-1k-CME" firstAttribute="centerX" secondItem="YkZ-mf-1h0" secondAttribute="centerX" id="36f-p6-7Zr"/>
                             <constraint firstItem="xsL-VT-qwI" firstAttribute="top" secondItem="Ivy-GH-08p" secondAttribute="bottom" constant="10.5" id="6bE-gU-eyc"/>
                             <constraint firstItem="Ivy-GH-08p" firstAttribute="top" secondItem="beu-1k-CME" secondAttribute="bottom" constant="30" id="6xr-lv-NgV"/>
+                            <constraint firstItem="bZf-tm-dSJ" firstAttribute="centerX" secondItem="YkZ-mf-1h0" secondAttribute="centerX" id="ApP-O1-9Dz"/>
                             <constraint firstItem="beu-1k-CME" firstAttribute="top" secondItem="3dq-Gw-JcF" secondAttribute="bottom" constant="52" id="KM4-4W-aSu"/>
                             <constraint firstItem="Ivy-GH-08p" firstAttribute="centerX" secondItem="YkZ-mf-1h0" secondAttribute="centerX" id="KV5-gp-ASh"/>
                             <constraint firstItem="xsL-VT-qwI" firstAttribute="centerX" secondItem="YkZ-mf-1h0" secondAttribute="centerX" id="Rqy-4e-m8z"/>
@@ -409,12 +409,15 @@
                             <constraint firstItem="URg-uN-TRG" firstAttribute="width" secondItem="beu-1k-CME" secondAttribute="width" id="cUr-F9-q6N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="beu-1k-CME" secondAttribute="trailing" constant="96" id="fCt-54-bwZ"/>
                             <constraint firstItem="URg-uN-TRG" firstAttribute="height" secondItem="beu-1k-CME" secondAttribute="height" id="pGO-J2-iTe"/>
+                            <constraint firstItem="ts3-Db-jJH" firstAttribute="top" secondItem="bZf-tm-dSJ" secondAttribute="bottom" constant="20" id="sg8-Dn-ZyL"/>
                             <constraint firstItem="URg-uN-TRG" firstAttribute="centerY" secondItem="beu-1k-CME" secondAttribute="centerY" id="woc-83-GYU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="User" id="ZSm-fo-qyn"/>
                     <connections>
                         <outlet property="iconbg" destination="URg-uN-TRG" id="K96-AV-jp1"/>
+                        <outlet property="label1" destination="Ivy-GH-08p" id="aU8-B8-KEj"/>
+                        <outlet property="label2" destination="xsL-VT-qwI" id="ArP-IY-bLs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZ2-NK-Zgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -423,6 +426,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Screen Shot 2017-02-26 at 12.48.00 PM" width="152" height="150"/>
         <image name="record" width="348" height="348"/>
         <image name="sword" width="800" height="800"/>
         <image name="uparrow" width="1000" height="1000"/>

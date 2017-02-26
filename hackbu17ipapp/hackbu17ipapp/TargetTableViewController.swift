@@ -20,7 +20,6 @@ class TargetTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
-        createFakeData()
         loadUsers() {
             self.tableView.reloadData()
         }
@@ -35,25 +34,28 @@ class TargetTableViewController: UITableViewController {
     // MARK: - Testing
     
     func createFakeData() {
-        data.append(User(id: "1782217822", name: "Charlie D", username: "cd17822", score: 17))
+        data.append(User(id: "1782217822", name: "Charlie DiGi", username: "cd17822", score: 17))
+        data.append(User(id: "1782217823", name: "Tyler Schmitt", username: "schmittj", score: 8))
+        data.append(User(id: "1782217824", name: "Annika Wiesinger", username: "aaw", score: 2))
     }
     
     // MARK: - Personal
     
     func loadUsers(_ callback: @escaping (Void) -> Void) {
-        GET("/users?ofUser=\(USER!.id)", callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
-            if err != nil {
-                showError(on: self)
-            } else if res != nil {
-                for user in res!["users"].arrayValue {
-                    //                    data.append()
-                }
-                
-                //                data = res!["users"].arrayValue.map {  }
-                
-                callback()
-            }
-        })
+//        GET("/users?ofUser=\(USER!.id)", callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
+//            if err != nil {
+//                showError(on: self)
+//            } else if res != nil {
+//                for user in res!["users"].arrayValue {
+//                    //                    data.append()
+//                }
+//                
+//                //                data = res!["users"].arrayValue.map {  }
+//                
+//                callback()
+//            }
+//        })
+        createFakeData()
     }
     
     func textFieldHandler(textField: UITextField!) {
@@ -84,6 +86,7 @@ class TargetTableViewController: UITableViewController {
         cell.label2.text = "\(user.score)"
         cell.label3.text = ""
         cell.iconImageView.image = #imageLiteral(resourceName: "sword")
+        cell.iconbg.backgroundColor = colors[(indexPath as NSIndexPath).row % 6]
         
         return cell
     }

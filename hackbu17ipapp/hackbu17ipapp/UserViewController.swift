@@ -18,11 +18,13 @@ class UserViewController: UIViewController {
             iconbg.layer.cornerRadius = iconbg.frame.height / 2
         }
     }
+    @IBOutlet var label1: UILabel!
+    @IBOutlet var label2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        configureLabels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +32,11 @@ class UserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func configureLabels() {
+        label1.text = user!.name
+        label2.text = "\(user!.score)"
+    }
+    
     func download(fileKey: String){
         if let url = CameraEngineFileManager.temporaryPath("video.mp4") {
             let downloadingFileURL = url

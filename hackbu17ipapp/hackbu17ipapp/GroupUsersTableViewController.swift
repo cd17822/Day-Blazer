@@ -20,7 +20,7 @@ class GroupUsersTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
-        createFakeData()
+//        createFakeData()
         loadUsers() {
             self.tableView.reloadData()
         }
@@ -35,25 +35,28 @@ class GroupUsersTableViewController: UITableViewController {
     // MARK: - Testing
     
     func createFakeData() {
-        data.append(User(id: "1782217822", name: "Charlie D", username: "cd17822", score: 17))
+        data.append(User(id: "1782217822", name: "Charlie DiGi", username: "cd17822", score: 17))
+        data.append(User(id: "1782217823", name: "Tyler Schmitt", username: "schmittj", score: 8))
+        data.append(User(id: "1782217824", name: "Annika Wiesinger", username: "aaw", score: 2))
     }
     
     // MARK: - Personal
     
     func loadUsers(_ callback: @escaping (Void) -> Void) {
-        GET("/users?ofGroup=\(group!.id)", callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
-            if err != nil {
-                showError(on: self)
-            } else if res != nil {
-                for user in res!["users"].arrayValue {
-                    //                    data.append()
-                }
-                
-                //                data = res!["users"].arrayValue.map {  }
-                
-                callback()
-            }
-        })
+//        GET("/users?ofGroup=\(group!.id)", callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
+//            if err != nil {
+//                showError(on: self)
+//            } else if res != nil {
+//                for user in res!["users"].arrayValue {
+//                    //                    data.append()
+//                }
+//                
+//                //                data = res!["users"].arrayValue.map {  }
+//                
+//                callback()
+//            }
+//        })
+        createFakeData()
     }
     
     @IBAction func addUserTapped(_ sender: Any) {
@@ -117,6 +120,7 @@ class GroupUsersTableViewController: UITableViewController {
         cell.label2.text = "\(user.score)"
         cell.label3.text = ""
         cell.iconImageView.image = #imageLiteral(resourceName: "sword")
+        cell.iconbg.backgroundColor = colors[(indexPath as NSIndexPath).row % 6]
         
         return cell
     }
@@ -162,10 +166,9 @@ class GroupUsersTableViewController: UITableViewController {
     }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GroupsToGroupUsers" {
+        if segue.identifier == "GroupUsersToUser" {
             let vc = segue.destination as! UserViewController
             
-            vc.group = sender as? Group
             vc.user = sender as? User
         }
      }

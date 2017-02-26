@@ -34,25 +34,28 @@ class GroupsTableViewController: UITableViewController {
     // MARK: - Testing
     
     func createFakeData() {
-        data.append(Group(id: "1782217822", name: "Squad"))
+        data.append(Group(id: "1782217822", name: "Day Blazers"))
+        data.append(Group(id: "1782217823", name: "Women in Tech"))
+        data.append(Group(id: "1782217824", name: "Imagine I had"))
+        data.append(Group(id: "1782217825", name: "This many friends"))
     }
 
     // MARK: - Personal
 
     func loadGroups(_ callback: @escaping (Void) -> Void) {
-        GET("/groups", callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
-            if err != nil {
-                showError(on: self)
-            } else if res != nil {
-                for group in res!["groups"].arrayValue {
-//                    data.append()
-                }
-                
-//                data = res!["groups"].arrayValue.map {  }
-                
-                callback()
-            }
-        })
+//        GET("/groups", callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
+//            if err != nil {
+//                showError(on: self)
+//            } else if res != nil {
+//                for group in res!["groups"].arrayValue {
+////                    data.append()
+//                }
+//                
+////                data = res!["groups"].arrayValue.map {  }
+//                
+//                callback()
+//            }
+//        })
     }
     
     func configureNib() {
@@ -113,6 +116,7 @@ class GroupsTableViewController: UITableViewController {
         cell.label1.text = ""
         cell.label2.text = ""
         cell.label3.text = group.name
+        cell.iconbg.backgroundColor = colors[(indexPath as NSIndexPath).row % 6]
 
         return cell
     }

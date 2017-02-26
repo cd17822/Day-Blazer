@@ -34,6 +34,7 @@ class CamVC: UIViewController {
         let tmp: [UIView] = [chleft, chright, chbottom, chtop]
         return tmp
     }
+    var animating = false
     
     @IBOutlet var slider: UISlider!{
         didSet{
@@ -54,7 +55,10 @@ class CamVC: UIViewController {
 //            performSegue(withIdentifier: "CamVCToNewUser", sender: nil)
 //        }
         // COMMENTING THIS OUT UNTIL WE GOT THE SERVER
-        animateRecordingBubble()
+        if !animating {
+            animateRecordingBubble()
+            animating = true
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -172,7 +176,7 @@ class CamVC: UIViewController {
                     // Do something with uploadTask.
                 }
                 
-                self.performSegue(withIdentifier: "CamVCToTarget", sender: fileKey)
+//                self.performSegue(withIdentifier: "CamVCToTarget", sender: fileKey)
                 
                 return nil;
         }

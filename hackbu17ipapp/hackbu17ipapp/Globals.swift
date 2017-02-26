@@ -21,7 +21,7 @@ func showError(on vc: UIViewController, overrideAndShow: Bool = false, message: 
 //    }
     
     print("ERROR:", message)
-    
+    return // SHOULDNT BE HERE
     let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
     alertController.view.tintColor = UIColor.red
     let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -35,6 +35,14 @@ extension UIColor {
         return UIColor(red:0.82, green:0.95, blue:0.99, alpha:1.00)
     }
 }
+
+let colors = [
+    UIColor(red:0.82, green:0.95, blue:0.99, alpha:1.00),
+    UIColor(red:1.00, green:0.49, blue:0.59, alpha:1.00),
+    UIColor(red:1.00, green:0.65, blue:0.51, alpha:1.00),
+    UIColor(red:0.65, green:0.91, blue:0.43, alpha:1.00),
+    UIColor(red:0.49, green:0.74, blue:0.99, alpha:1.00),
+    UIColor(red:0.85, green:0.72, blue:0.99, alpha:1.00)]
 
 extension Date {
     static let iso8601Formatter: DateFormatter = {
