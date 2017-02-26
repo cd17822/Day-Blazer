@@ -164,7 +164,7 @@ class ViewController: UIViewController {
                                 for ch in self.chs {
                                     ch.isHidden = true
                                 }
-                                slider.isHidden = true
+                                self.slider.isHidden = true
                                 
                                 
                                 
