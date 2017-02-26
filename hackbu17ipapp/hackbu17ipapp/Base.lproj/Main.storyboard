@@ -216,7 +216,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="6Mh-Ka-wVA" kind="show" identifier="UsersToUser" id="Acc-Vf-f2h"/>
+                        <segue destination="6Mh-Ka-wVA" kind="show" identifier="GroupUsersToUser" id="Acc-Vf-f2h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9V-oR-YDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
