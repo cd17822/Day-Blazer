@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CameraEngine
+import AWSS3
 
 class UserViewController: UIViewController {
     var user: User?
@@ -28,6 +30,36 @@ class UserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func download(fileKey: String){
+        if let url = CameraEngineFileManager.temporaryPath("video.mp4") {
+            let downloadingFileURL = url
+            let transferManager = AWSS3TransferManager.default()
+            let downloadRequest = AWSS3TransferManagerDownloadRequest()
+            downloadRequest?.bucket = "hackbu-videos"
+            downloadRequest?.key = "video.mp4" //needs to be replaced with name
+            downloadRequest?.downloadingFileURL = downloadingFileURL
+            transferManager.download(downloadRequest!).continueWith(executor: AWSExecutor.mainThread(), block: { (task:AWSTask<AnyObject>) -> Any? in
+                
+                if let error = task.error as? NSError {
+                    if error.domain == AWSS3TransferManagerErrorDomain, let code = AWSS3TransferManagerErrorType(rawValue: error.code) {
+                        switch code {
+                        case .cancelled, .paused:
+                            break
+                        default:
+                            print("Error1 downloading: \(downloadRequest?.key) Error: \(error)")
+                        }
+                    } else {
+                        print("Error2 downloading: \(downloadRequest?.key) Error: \(error)")
+                    }
+                    return nil
+                }
+                print("Download complete for: \(downloadRequest?.key)")
+                //let downloadOutput = task.result
+                return nil
+            })
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

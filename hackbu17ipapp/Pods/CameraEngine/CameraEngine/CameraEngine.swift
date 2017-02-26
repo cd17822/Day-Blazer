@@ -295,17 +295,17 @@ public class CameraEngine: NSObject {
     
     private func handleDeviceOrientation() {
         if self.rotationCamera {
-			if (!UIDevice.current.isGeneratingDeviceOrientationNotifications) {
-				UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-			}
+            if (!UIDevice.current.isGeneratingDeviceOrientationNotifications) {
+                UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+            }
             NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: OperationQueue.main) { (_) -> Void in
                 self.previewLayer.connection.videoOrientation = AVCaptureVideoOrientation.orientationFromUIDeviceOrientation(UIDevice.current.orientation)
             }
         }
         else {
-			if (UIDevice.current.isGeneratingDeviceOrientationNotifications) {
-				UIDevice.current.endGeneratingDeviceOrientationNotifications()
-			}
+            if (UIDevice.current.isGeneratingDeviceOrientationNotifications) {
+                UIDevice.current.endGeneratingDeviceOrientationNotifications()
+            }
             NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         }
     }
@@ -416,24 +416,24 @@ public extension CameraEngine {
     
     public func focus(_ atPoint: CGPoint) {
         if let currentDevice = self.cameraDevice.currentDevice {
-			let performFocus = currentDevice.isFocusModeSupported(.autoFocus) && currentDevice.isFocusPointOfInterestSupported
-			let performExposure = currentDevice.isExposureModeSupported(.autoExpose) && currentDevice.isExposurePointOfInterestSupported
+            let performFocus = currentDevice.isFocusModeSupported(.autoFocus) && currentDevice.isFocusPointOfInterestSupported
+            let performExposure = currentDevice.isExposureModeSupported(.autoExpose) && currentDevice.isExposurePointOfInterestSupported
             if performFocus || performExposure {
                 let focusPoint = self.previewLayer.captureDevicePointOfInterest(for: atPoint)
                 do {
                     try currentDevice.lockForConfiguration()
-					
-					if performFocus {
-						currentDevice.focusPointOfInterest = CGPoint(x: focusPoint.x, y: focusPoint.y)
-						if currentDevice.focusMode == AVCaptureFocusMode.locked {
-							currentDevice.focusMode = AVCaptureFocusMode.autoFocus
-						} else {
-							currentDevice.focusMode = AVCaptureFocusMode.continuousAutoFocus
-						}
-					}
-					
+                    
+                    if performFocus {
+                        currentDevice.focusPointOfInterest = CGPoint(x: focusPoint.x, y: focusPoint.y)
+                        if currentDevice.focusMode == AVCaptureFocusMode.locked {
+                            currentDevice.focusMode = AVCaptureFocusMode.autoFocus
+                        } else {
+                            currentDevice.focusMode = AVCaptureFocusMode.continuousAutoFocus
+                        }
+                    }
+                    
                     if performExposure {
-						currentDevice.exposurePointOfInterest = CGPoint(x: focusPoint.x, y: focusPoint.y)
+                        currentDevice.exposurePointOfInterest = CGPoint(x: focusPoint.x, y: focusPoint.y)
                         if currentDevice.exposureMode == AVCaptureExposureMode.locked {
                             currentDevice.exposureMode = AVCaptureExposureMode.autoExpose
                         } else {
@@ -457,10 +457,10 @@ public extension CameraEngine {
     public func capturePhoto(_ blockCompletion: @escaping blockCompletionCapturePhoto) {
         self.cameraOutput.capturePhoto(blockCompletion)
     }
-	
-	public func capturePhotoBuffer(_ blockCompletion: @escaping blockCompletionCapturePhotoBuffer) {
-		self.cameraOutput.capturePhotoBuffer(blockCompletion)
-	}
+    
+    public func capturePhotoBuffer(_ blockCompletion: @escaping blockCompletionCapturePhotoBuffer) {
+        self.cameraOutput.capturePhotoBuffer(blockCompletion)
+    }
     
     public func startRecordingVideo(_ url: URL, blockCompletion: @escaping blockCompletionCaptureVideo) {
         if self.isRecording == false {

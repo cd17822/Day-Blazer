@@ -17,13 +17,13 @@ public typealias blockCompletionProgressRecording = (_ duration: Float64) -> (Vo
 
 extension AVCaptureVideoOrientation {
     static func orientationFromUIDeviceOrientation(_ orientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
-//        switch orientation {
-//        case .portrait: return .portrait
-//        case .landscapeLeft: return .landscapeRight
-//        case .landscapeRight: return .landscapeLeft
-//        case .portraitUpsideDown: return .portraitUpsideDown
-//        default: return .portrait
-//        }
+        //        switch orientation {
+        //        case .portrait: return .portrait
+        //        case .landscapeLeft: return .landscapeRight
+        //        case .landscapeRight: return .landscapeLeft
+        //        case .portraitUpsideDown: return .portraitUpsideDown
+        //        default: return .portrait
+        //        }
         return .portrait
     }
 }
@@ -41,16 +41,16 @@ class CameraEngineCaptureOutput: NSObject {
     var isRecording = false
     var blockCompletionBuffer: blockCompletionOutputBuffer?
     var blockCompletionProgress: blockCompletionProgressRecording?
-	
-	func capturePhotoBuffer(_ blockCompletion: @escaping blockCompletionCapturePhotoBuffer) {
-		guard let connectionVideo  = self.stillCameraOutput.connection(withMediaType: AVMediaTypeVideo) else {
-			blockCompletion(nil, nil)
-			return
-		}
-		connectionVideo.videoOrientation = AVCaptureVideoOrientation.orientationFromUIDeviceOrientation(UIDevice.current.orientation)
-		self.stillCameraOutput.captureStillImageAsynchronously(from: connectionVideo, completionHandler: blockCompletion)
-	}
-	
+    
+    func capturePhotoBuffer(_ blockCompletion: @escaping blockCompletionCapturePhotoBuffer) {
+        guard let connectionVideo  = self.stillCameraOutput.connection(withMediaType: AVMediaTypeVideo) else {
+            blockCompletion(nil, nil)
+            return
+        }
+        connectionVideo.videoOrientation = AVCaptureVideoOrientation.orientationFromUIDeviceOrientation(UIDevice.current.orientation)
+        self.stillCameraOutput.captureStillImageAsynchronously(from: connectionVideo, completionHandler: blockCompletion)
+    }
+    
     func capturePhoto(_ blockCompletion: @escaping blockCompletionCapturePhoto) {
         guard let connectionVideo  = self.stillCameraOutput.connection(withMediaType: AVMediaTypeVideo) else {
             blockCompletion(nil, nil)
@@ -162,7 +162,7 @@ extension CameraEngineCaptureOutput: AVCaptureFileOutputRecordingDelegate {
     public func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         // nil
     }
-
+    
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [AnyObject]!) {
         print("start recording ...")

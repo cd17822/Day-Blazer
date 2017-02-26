@@ -35,13 +35,13 @@ public class CameraEngineFileManager {
     public class func savePhoto(_ image: UIImage, blockCompletion: blockCompletionSaveMedia?) {
         PHPhotoLibrary.shared().performChanges({ () -> Void in
             PHAssetChangeRequest.creationRequestForAsset(from: image)
-            }, completionHandler: blockCompletion)
+        }, completionHandler: blockCompletion)
     }
     
     public class func saveVideo(_ url: URL, blockCompletion: blockCompletionSaveMedia?) {
         PHPhotoLibrary.shared().performChanges({ () -> Void in
             PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
-            }, completionHandler: blockCompletion)
+        }, completionHandler: blockCompletion)
     }
     
     public class func documentPath() -> String? {

@@ -1,8 +1,16 @@
 PODS:
+  - Alamofire (4.3.0)
+  - AWSCore (2.5.1)
+  - AWSS3 (2.5.1):
+    - AWSCore (= 2.5.1)
   - CameraEngine (0.9.3)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire
+  - AWSS3
   - CameraEngine (from `https://github.com/Sturtuk/CameraEngineIOS.git`, branch `swift-3.0`)
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
   CameraEngine:
@@ -15,8 +23,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Sturtuk/CameraEngineIOS.git
 
 SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AWSCore: 71ca929a42c68ca7d645fcfa1e41ea0ff792a275
+  AWSS3: d45eaab964b731853bd20c681c0d6f0a99408305
   CameraEngine: e24a801f76bfb2e5ff61b11592f82dfc1b4dafc9
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: a2ffce8645a7e8faecb276b7d349ec50a02016c4
+PODFILE CHECKSUM: a9dfc6c2c09b62e51fbcdae281bd1ef35a73de94
 
 COCOAPODS: 1.2.0

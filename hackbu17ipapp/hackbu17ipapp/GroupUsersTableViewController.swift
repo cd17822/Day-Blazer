@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class GroupUsersTableViewController: UITableViewController {
     var group: Group?
@@ -20,6 +21,9 @@ class GroupUsersTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         createFakeData()
+        loadUsers() {
+            self.tableView.reloadData()
+        }
         configureNib()
     }
     
@@ -36,9 +40,26 @@ class GroupUsersTableViewController: UITableViewController {
     
     // MARK: - Personal
     
+    func loadUsers(_ callback: @escaping (Void) -> Void) {
+        GET("/users?ofGroup=\(group!.id)", callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
+            if err != nil {
+                showError(on: self)
+            } else if res != nil {
+                for user in res!["users"].arrayValue {
+                    //                    data.append()
+                }
+                
+                //                data = res!["users"].arrayValue.map {  }
+                
+                callback()
+            }
+        })
+    }
+    
     @IBAction func addUserTapped(_ sender: Any) {
         let alert = UIAlertController(title: "Add User", message: "Enter the username of who you'd like to add to \(group!.name).", preferredStyle:
             UIAlertControllerStyle.alert)
+        alert.view.tintColor = UIColor.red
         
         alert.addTextField(configurationHandler: textFieldHandler)
         
@@ -58,7 +79,16 @@ class GroupUsersTableViewController: UITableViewController {
     }
     
     func addUser(byUsername username: String) {
-        // TODO REQUEST
+        POST("/addUserToGroup", parameters: ["username":username,
+                                             "groupId": group!.id],
+             callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
+                if err != nil {
+                    showError(on: self)
+                }
+                
+                self.loadUsers() {}
+        })
+        
     }
     
     // MARK: - Table view data source

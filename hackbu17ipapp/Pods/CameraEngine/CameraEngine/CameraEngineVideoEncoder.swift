@@ -79,13 +79,13 @@ public enum CameraEngineVideoEncoderEncoderSettings: String {
 
 extension UIDevice {
     static func orientationTransformation() -> CGFloat {
-//        switch UIDevice.current.orientation {
-//        case .portrait: return CGFloat(M_PI / 2)
-//        case .portraitUpsideDown: return CGFloat(M_PI / 4)
-//        case .landscapeRight: return CGFloat(M_PI)
-//        case .landscapeLeft: return CGFloat(M_PI * 2)
-//        default: return 0
-//        }
+        //        switch UIDevice.current.orientation {
+        //        case .portrait: return CGFloat(M_PI / 2)
+        //        case .portraitUpsideDown: return CGFloat(M_PI / 4)
+        //        case .landscapeRight: return CGFloat(M_PI)
+        //        case .landscapeLeft: return CGFloat(M_PI * 2)
+        //        default: return 0
+        //        }
         return CGFloat(M_PI / 2)
     }
 }
@@ -106,7 +106,7 @@ class CameraEngineVideoEncoder {
             print("[Camera engine] presetSettingEncoder = nil")
             return
         }
-
+        
         do {
             self.assetWriter = try AVAssetWriter(url: url, fileType: AVFileTypeMPEG4)
         }
@@ -123,7 +123,7 @@ class CameraEngineVideoEncoder {
         guard self.assetWriter.canApply(outputSettings: audioOutputSettings, forMediaType: AVMediaTypeAudio) else {
             fatalError("Negative [AUDIO] : Can't apply the Output settings...")
         }
-
+        
         self.videoInputWriter = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoOutputSettings)
         self.videoInputWriter.expectsMediaDataInRealTime = true
         self.videoInputWriter.transform = CGAffineTransform(rotationAngle: UIDevice.orientationTransformation())
@@ -156,13 +156,13 @@ class CameraEngineVideoEncoder {
     }
     
     func appendBuffer(_ sampleBuffer: CMSampleBuffer!, isVideo: Bool) {
-	
-	if CMSampleBufferDataIsReady(sampleBuffer) {
+        
+        if CMSampleBufferDataIsReady(sampleBuffer) {
             if self.assetWriter.status == AVAssetWriterStatus.unknown {
                 let startTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
                 self.assetWriter.startWriting()
-                self.assetWriter.startSession(atSourceTime: startTime) 
-	    }
+                self.assetWriter.startSession(atSourceTime: startTime)
+            }
             if isVideo {
                 if self.videoInputWriter.isReadyForMoreMediaData {
                     self.videoInputWriter.append(sampleBuffer)
@@ -173,7 +173,7 @@ class CameraEngineVideoEncoder {
                     self.audioInputWriter.append(sampleBuffer)
                 }
             }
-	}
+        }
     }
     
     func progressCurrentBuffer(_ sampleBuffer: CMSampleBuffer) -> Float64 {

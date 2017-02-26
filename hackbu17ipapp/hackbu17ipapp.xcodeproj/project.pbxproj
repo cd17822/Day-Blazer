@@ -17,12 +17,15 @@
 		CB595E811E62757C0019ECA6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB595E801E62757C0019ECA6 /* Group.swift */; };
 		CB595E831E6275FD0019ECA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB595E821E6275FD0019ECA6 /* User.swift */; };
 		CB82AD911E622B7A00B85094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD901E622B7A00B85094 /* AppDelegate.swift */; };
-		CB82AD931E622B7A00B85094 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD921E622B7A00B85094 /* ViewController.swift */; };
+		CB82AD931E622B7A00B85094 /* CamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD921E622B7A00B85094 /* CamVC.swift */; };
 		CB82AD991E622B7A00B85094 /* hackbu17ipapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB82AD971E622B7A00B85094 /* hackbu17ipapp.xcdatamodeld */; };
 		CB82AD9B1E622B7A00B85094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB82AD9A1E622B7A00B85094 /* Assets.xcassets */; };
 		CB82AD9E1E622B7A00B85094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB82AD9C1E622B7A00B85094 /* LaunchScreen.storyboard */; };
 		CB94889C1E6295FD00A005D3 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB94889B1E6295FD00A005D3 /* UserViewController.swift */; };
 		CB94889E1E629AF900A005D3 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB94889D1E629AF900A005D3 /* Globals.swift */; };
+		CBF14ED61E62D0D1002A1C75 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF14ED51E62D0D1002A1C75 /* Network.swift */; };
+		CBF14ED81E62DFCA002A1C75 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF14ED71E62DFCA002A1C75 /* NewUserViewController.swift */; };
+		CBF14EDA1E62E40E002A1C75 /* TargetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF14ED91E62E40E002A1C75 /* TargetTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +42,16 @@
 		CB595E821E6275FD0019ECA6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB82AD8D1E622B7A00B85094 /* hackbu17ipapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackbu17ipapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB82AD901E622B7A00B85094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB82AD921E622B7A00B85094 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB82AD921E622B7A00B85094 /* CamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamVC.swift; sourceTree = "<group>"; };
 		CB82AD981E622B7A00B85094 /* hackbu17ipapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hackbu17ipapp.xcdatamodel; sourceTree = "<group>"; };
 		CB82AD9A1E622B7A00B85094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB82AD9D1E622B7A00B85094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB82AD9F1E622B7A00B85094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB94889B1E6295FD00A005D3 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		CB94889D1E629AF900A005D3 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		CBF14ED51E62D0D1002A1C75 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CBF14ED71E62DFCA002A1C75 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		CBF14ED91E62E40E002A1C75 /* TargetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,16 @@
 			isa = PBXGroup;
 			children = (
 				CB82AD901E622B7A00B85094 /* AppDelegate.swift */,
-				CB82AD921E622B7A00B85094 /* ViewController.swift */,
+				CB82AD921E622B7A00B85094 /* CamVC.swift */,
 				CB595E7C1E62685B0019ECA6 /* BrowsingNavViewController.swift */,
 				CB595E7E1E6274DC0019ECA6 /* GroupsTableViewController.swift */,
 				CB94889B1E6295FD00A005D3 /* UserViewController.swift */,
+				CBF14ED71E62DFCA002A1C75 /* NewUserViewController.swift */,
+				CBF14ED91E62E40E002A1C75 /* TargetTableViewController.swift */,
 				CB3783901E62850700F59615 /* GroupUsersTableViewController.swift */,
 				CB37838C1E627C9600F59615 /* TableViewCell.swift */,
 				CB37838E1E627CB500F59615 /* TableViewCell.xib */,
+				CBF14ED51E62D0D1002A1C75 /* Network.swift */,
 				CB94889D1E629AF900A005D3 /* Globals.swift */,
 				CB595E801E62757C0019ECA6 /* Group.swift */,
 				CB595E821E6275FD0019ECA6 /* User.swift */,
@@ -243,8 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB82AD931E622B7A00B85094 /* ViewController.swift in Sources */,
+				CBF14EDA1E62E40E002A1C75 /* TargetTableViewController.swift in Sources */,
+				CB82AD931E622B7A00B85094 /* CamVC.swift in Sources */,
+				CBF14ED81E62DFCA002A1C75 /* NewUserViewController.swift in Sources */,
 				CB94889C1E6295FD00A005D3 /* UserViewController.swift in Sources */,
+				CBF14ED61E62D0D1002A1C75 /* Network.swift in Sources */,
 				CB37838D1E627C9600F59615 /* TableViewCell.swift in Sources */,
 				CB595E7F1E6274DC0019ECA6 /* GroupsTableViewController.swift in Sources */,
 				CB3783911E62850700F59615 /* GroupUsersTableViewController.swift in Sources */,

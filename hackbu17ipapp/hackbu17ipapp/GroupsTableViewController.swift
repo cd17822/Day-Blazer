@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class GroupsTableViewController: UITableViewController {
     var data = [Group]()
@@ -18,7 +19,10 @@ class GroupsTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        createFakeData()
+        createFakeData() // FOR TESTING ONLY
+        loadGroups() {
+            self.tableView.reloadData()
+        }
         configureNib()
     }
 
@@ -35,6 +39,22 @@ class GroupsTableViewController: UITableViewController {
 
     // MARK: - Personal
 
+    func loadGroups(_ callback: @escaping (Void) -> Void) {
+        GET("/groups", callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
+            if err != nil {
+                showError(on: self)
+            } else if res != nil {
+                for group in res!["groups"].arrayValue {
+//                    data.append()
+                }
+                
+//                data = res!["groups"].arrayValue.map {  }
+                
+                callback()
+            }
+        })
+    }
+    
     func configureNib() {
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     }
@@ -46,6 +66,7 @@ class GroupsTableViewController: UITableViewController {
     @IBAction func addGroupTapped(_ sender: Any) {
         let alert = UIAlertController(title: "New Group", message: "Enter the name of the group you'd like to create.", preferredStyle:
             UIAlertControllerStyle.alert)
+        alert.view.tintColor = UIColor.red
         
         alert.addTextField(configurationHandler: textFieldHandler)
         
@@ -65,7 +86,14 @@ class GroupsTableViewController: UITableViewController {
     }
     
     func addGroup(withName groupName: String) {
-        // TODO REQUEST
+        POST("/createTeam", parameters: ["groupName":groupName],
+             callback: {(err: [String:AnyObject]?, res: JSON?) -> Void in
+                if err != nil {
+                    showError(on: self)
+                }
+                
+                self.loadGroups(){}
+        })
     }
     
     // MARK: - Table view data source

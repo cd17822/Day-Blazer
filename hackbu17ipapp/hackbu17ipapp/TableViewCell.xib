@@ -50,10 +50,18 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="castle" translatesAutoresizingMaskIntoConstraints="NO" id="5H7-tA-iRU">
                         <rect key="frame" x="8" y="6" width="54" height="54"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightarrow" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-pn-r8c">
+                        <rect key="frame" x="317" y="13" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="Tqj-Yo-kB2"/>
+                            <constraint firstAttribute="height" constant="40" id="z69-La-rGp"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="NG9-CZ-b25" firstAttribute="leading" secondItem="78b-aC-rdT" secondAttribute="leading" id="Bcc-0P-6Zh"/>
                     <constraint firstItem="sX4-yr-OJr" firstAttribute="centerX" secondItem="5H7-tA-iRU" secondAttribute="centerX" id="CvU-7g-zRA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kxk-pn-r8c" secondAttribute="trailing" constant="10" id="D4W-be-t1E"/>
                     <constraint firstItem="xBb-78-emX" firstAttribute="top" secondItem="78b-aC-rdT" secondAttribute="bottom" constant="2" id="Gbv-qs-ubB"/>
                     <constraint firstAttribute="leadingMargin" secondItem="78b-aC-rdT" secondAttribute="leading" constant="-69" id="Iu7-RZ-2aq"/>
                     <constraint firstItem="xBb-78-emX" firstAttribute="leading" secondItem="78b-aC-rdT" secondAttribute="leading" id="Kxv-bN-jAe"/>
@@ -61,6 +69,7 @@
                     <constraint firstItem="sX4-yr-OJr" firstAttribute="height" secondItem="5H7-tA-iRU" secondAttribute="height" id="O50-El-i3t"/>
                     <constraint firstItem="78b-aC-rdT" firstAttribute="centerY" secondItem="SVH-oe-Ug9" secondAttribute="centerY" constant="-12" id="Zej-mg-NfO"/>
                     <constraint firstItem="78b-aC-rdT" firstAttribute="width" secondItem="xBb-78-emX" secondAttribute="width" id="ilh-nf-UZp"/>
+                    <constraint firstItem="kxk-pn-r8c" firstAttribute="centerY" secondItem="NG9-CZ-b25" secondAttribute="centerY" id="kwF-F2-fmI"/>
                     <constraint firstAttribute="leadingMargin" secondItem="5H7-tA-iRU" secondAttribute="leading" id="oTv-kO-Ftz"/>
                     <constraint firstItem="sX4-yr-OJr" firstAttribute="width" secondItem="5H7-tA-iRU" secondAttribute="width" id="tGo-Le-8lE"/>
                     <constraint firstItem="sX4-yr-OJr" firstAttribute="centerY" secondItem="5H7-tA-iRU" secondAttribute="centerY" id="yLB-TZ-ihQ"/>
@@ -81,5 +90,6 @@
     </objects>
     <resources>
         <image name="castle" width="512" height="512"/>
+        <image name="rightarrow" width="128" height="128"/>
     </resources>
 </document>
