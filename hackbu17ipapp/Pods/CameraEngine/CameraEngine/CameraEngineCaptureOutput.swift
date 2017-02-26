@@ -17,13 +17,14 @@ public typealias blockCompletionProgressRecording = (_ duration: Float64) -> (Vo
 
 extension AVCaptureVideoOrientation {
     static func orientationFromUIDeviceOrientation(_ orientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
-        switch orientation {
-        case .portrait: return .portrait
-        case .landscapeLeft: return .landscapeRight
-        case .landscapeRight: return .landscapeLeft
-        case .portraitUpsideDown: return .portraitUpsideDown
-        default: return .portrait
-        }
+//        switch orientation {
+//        case .portrait: return .portrait
+//        case .landscapeLeft: return .landscapeRight
+//        case .landscapeRight: return .landscapeLeft
+//        case .portraitUpsideDown: return .portraitUpsideDown
+//        default: return .portrait
+//        }
+        return .portrait
     }
 }
 

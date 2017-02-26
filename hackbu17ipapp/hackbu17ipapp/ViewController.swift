@@ -18,8 +18,21 @@ class ViewController: UIViewController {
     private var cameraEngine = CameraEngine()
     private var mode: ModeCapture = .Video
     
-//    @IBOutlet weak var buttonMode: UIButton!
-//    @IBOutlet weak var labelMode: UILabel!
+    @IBOutlet var chleft: UIView!
+    @IBOutlet var chright: UIView!
+    @IBOutlet var chbottom: UIView!
+    @IBOutlet var chtop: UIView!
+    var chs: [UIView] {
+        let tmp: [UIView] = [chleft, chright, chbottom, chtop]
+        return tmp
+    }
+    
+    @IBOutlet var slider: UISlider!{
+        didSet{
+            slider.transform = CGAffineTransform.init(rotationAngle: CGFloat(-M_PI_2))
+        }
+    }
+    
     @IBOutlet weak var buttonTrigger: UIButton!
     
     override func viewDidLayoutSubviews() {
@@ -131,12 +144,31 @@ class ViewController: UIViewController {
         case .Video:
             if !self.cameraEngine.isRecording {
                 if let url = CameraEngineFileManager.temporaryPath("video.mp4") {
-                    self.buttonTrigger.setTitle("stop recording", for: .normal)
-                    self.buttonTrigger.setImage(<#T##image: UIImage?##UIImage?#>, for: .normal)
+                    
+                    
+                    self.buttonTrigger.setImage(#imageLiteral(resourceName: "povgun"), for: .normal)
+                    for ch in self.chs {
+                        ch.isHidden = false
+                    }
+                    slider.isHidden = false
+                    
+                    
+                    
                     self.cameraEngine.startRecordingVideo(url, blockCompletion: { (url: URL?, error: NSError?) -> (Void) in
                         if let url = url {
                             DispatchQueue.main.async {
-                                self.buttonTrigger.setTitle("start recording", for: .normal)
+                                
+                                
+                                
+                                self.buttonTrigger.setImage(#imageLiteral(resourceName: "record"), for: .normal)
+                                for ch in self.chs {
+                                    ch.isHidden = true
+                                }
+                                slider.isHidden = true
+                                
+                                
+                                
+                                
                                 CameraEngineFileManager.saveVideo(url, blockCompletion: { (success: Bool, error: Error?) -> (Void) in
                                     if success {
                                         let alertController =  UIAlertController(title: "Success, video saved !", message: nil, preferredStyle: .alert)

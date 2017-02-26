@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "record.png",
+      "filename" : "povgun.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "record-1.png",
+      "filename" : "povgun-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "record-2.png",
+      "filename" : "povgun-2.png",
       "scale" : "3x"
     }
   ],
