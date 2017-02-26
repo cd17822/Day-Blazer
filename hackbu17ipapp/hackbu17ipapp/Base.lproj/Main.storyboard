@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -196,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="Ehd-09-JhS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell2" id="Ehd-09-JhS">
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ehd-09-JhS" id="arO-Z5-BIS">
@@ -230,7 +231,7 @@
         <!--User-->
         <scene sceneID="DsM-ja-qmV">
             <objects>
-                <viewController id="UVi-Jj-uFz" sceneMemberID="viewController">
+                <viewController id="UVi-Jj-uFz" customClass="UserViewController" customModule="hackbu17ipapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3dq-Gw-JcF"/>
                         <viewControllerLayoutGuide type="bottom" id="ts3-Db-jJH"/>
@@ -238,17 +239,59 @@
                     <view key="view" contentMode="scaleToFill" id="YkZ-mf-1h0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URg-uN-TRG">
+                                <rect key="frame" x="112" y="116" width="151" height="151"/>
+                                <color key="backgroundColor" red="0.81909436688324133" green="0.94970275314331287" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sword" translatesAutoresizingMaskIntoConstraints="NO" id="beu-1k-CME">
+                                <rect key="frame" x="112" y="116" width="151" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="beu-1k-CME" secondAttribute="height" multiplier="1:1" id="uWV-6N-wxG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charlie DiGiovanna" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivy-GH-08p">
+                                <rect key="frame" x="52.5" y="297" width="270" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-VT-qwI">
+                                <rect key="frame" x="167" y="346" width="40.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="beu-1k-CME" firstAttribute="centerX" secondItem="YkZ-mf-1h0" secondAttribute="centerX" id="36f-p6-7Zr"/>
+                            <constraint firstItem="xsL-VT-qwI" firstAttribute="top" secondItem="Ivy-GH-08p" secondAttribute="bottom" constant="10.5" id="6bE-gU-eyc"/>
+                            <constraint firstItem="Ivy-GH-08p" firstAttribute="top" secondItem="beu-1k-CME" secondAttribute="bottom" constant="30" id="6xr-lv-NgV"/>
+                            <constraint firstItem="beu-1k-CME" firstAttribute="top" secondItem="3dq-Gw-JcF" secondAttribute="bottom" constant="52" id="KM4-4W-aSu"/>
+                            <constraint firstItem="Ivy-GH-08p" firstAttribute="centerX" secondItem="YkZ-mf-1h0" secondAttribute="centerX" id="KV5-gp-ASh"/>
+                            <constraint firstItem="xsL-VT-qwI" firstAttribute="centerX" secondItem="YkZ-mf-1h0" secondAttribute="centerX" id="Rqy-4e-m8z"/>
+                            <constraint firstItem="beu-1k-CME" firstAttribute="leading" secondItem="YkZ-mf-1h0" secondAttribute="leadingMargin" constant="96" id="XGs-Fg-3Fn"/>
+                            <constraint firstItem="URg-uN-TRG" firstAttribute="centerX" secondItem="beu-1k-CME" secondAttribute="centerX" id="biJ-qP-T7Y"/>
+                            <constraint firstItem="URg-uN-TRG" firstAttribute="width" secondItem="beu-1k-CME" secondAttribute="width" id="cUr-F9-q6N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="beu-1k-CME" secondAttribute="trailing" constant="96" id="fCt-54-bwZ"/>
+                            <constraint firstItem="URg-uN-TRG" firstAttribute="height" secondItem="beu-1k-CME" secondAttribute="height" id="pGO-J2-iTe"/>
+                            <constraint firstItem="URg-uN-TRG" firstAttribute="centerY" secondItem="beu-1k-CME" secondAttribute="centerY" id="woc-83-GYU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="User" id="ZSm-fo-qyn"/>
+                    <connections>
+                        <outlet property="iconbg" destination="URg-uN-TRG" id="K96-AV-jp1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZ2-NK-Zgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="125"/>
+            <point key="canvasLocation" x="3020" y="124.58770614692655"/>
         </scene>
     </scenes>
     <resources>
         <image name="record" width="348" height="348"/>
+        <image name="sword" width="800" height="800"/>
         <image name="uparrow" width="1000" height="1000"/>
     </resources>
 </document>

@@ -13,6 +13,13 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var label2: UILabel!
     @IBOutlet var label3: UILabel!
     
+    @IBOutlet var iconbg: UIView! {
+        didSet {
+            iconbg.layer.cornerRadius = 27
+        }
+    }
+    @IBOutlet var iconImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

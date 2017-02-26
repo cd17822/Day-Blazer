@@ -37,7 +37,7 @@ class GroupUsersTableViewController: UITableViewController {
     // MARK: - Personal
     
     @IBAction func addUserTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Add User", message: "Enter the username of you'd like to add to \(group!.name).", preferredStyle:
+        let alert = UIAlertController(title: "Add User", message: "Enter the username of who you'd like to add to \(group!.name).", preferredStyle:
             UIAlertControllerStyle.alert)
         
         alert.addTextField(configurationHandler: textFieldHandler)
@@ -86,6 +86,7 @@ class GroupUsersTableViewController: UITableViewController {
         cell.label1.text = user.name
         cell.label2.text = "\(user.score)"
         cell.label3.text = ""
+        cell.iconImageView.image = #imageLiteral(resourceName: "sword")
         
         return cell
     }
@@ -130,12 +131,12 @@ class GroupUsersTableViewController: UITableViewController {
         performSegue(withIdentifier: "GroupUsersToUser", sender: data[(indexPath as NSIndexPath).row])
     }
     
-    /*
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "GroupsToGroupUsers" {
+            let vc = segue.destination as! UserViewController
+            
+            vc.group = sender as? Group
+            vc.user = sender as? User
+        }
      }
-     */
-    
 }
