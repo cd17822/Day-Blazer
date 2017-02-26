@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		12D68290F42223E7DCBC046A /* Pods_hackbu17ipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D531EB8EB1BCF8AB2A63481 /* Pods_hackbu17ipapp.framework */; };
+		CB37838D1E627C9600F59615 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB37838C1E627C9600F59615 /* TableViewCell.swift */; };
+		CB37838F1E627CB500F59615 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB37838E1E627CB500F59615 /* TableViewCell.xib */; };
+		CB3783911E62850700F59615 /* GroupUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3783901E62850700F59615 /* GroupUsersTableViewController.swift */; };
 		CB595E791E62510A0019ECA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB595E771E62510A0019ECA6 /* Main.storyboard */; };
 		CB595E7D1E62685B0019ECA6 /* BrowsingNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB595E7C1E62685B0019ECA6 /* BrowsingNavViewController.swift */; };
 		CB595E7F1E6274DC0019ECA6 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB595E7E1E6274DC0019ECA6 /* GroupsTableViewController.swift */; };
@@ -24,6 +27,9 @@
 		2D531EB8EB1BCF8AB2A63481 /* Pods_hackbu17ipapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackbu17ipapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32845D585DFB87CAB953521E /* Pods-hackbu17ipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackbu17ipapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-hackbu17ipapp/Pods-hackbu17ipapp.release.xcconfig"; sourceTree = "<group>"; };
 		5741468C3F248E8A6AE7246C /* Pods-hackbu17ipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackbu17ipapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hackbu17ipapp/Pods-hackbu17ipapp.debug.xcconfig"; sourceTree = "<group>"; };
+		CB37838C1E627C9600F59615 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		CB37838E1E627CB500F59615 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		CB3783901E62850700F59615 /* GroupUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupUsersTableViewController.swift; sourceTree = "<group>"; };
 		CB595E781E62510A0019ECA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB595E7C1E62685B0019ECA6 /* BrowsingNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowsingNavViewController.swift; sourceTree = "<group>"; };
 		CB595E7E1E6274DC0019ECA6 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +98,9 @@
 				CB82AD921E622B7A00B85094 /* ViewController.swift */,
 				CB595E7C1E62685B0019ECA6 /* BrowsingNavViewController.swift */,
 				CB595E7E1E6274DC0019ECA6 /* GroupsTableViewController.swift */,
+				CB3783901E62850700F59615 /* GroupUsersTableViewController.swift */,
+				CB37838C1E627C9600F59615 /* TableViewCell.swift */,
+				CB37838E1E627CB500F59615 /* TableViewCell.xib */,
 				CB595E801E62757C0019ECA6 /* Group.swift */,
 				CB595E821E6275FD0019ECA6 /* User.swift */,
 				CB595E771E62510A0019ECA6 /* Main.storyboard */,
@@ -167,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB595E791E62510A0019ECA6 /* Main.storyboard in Resources */,
+				CB37838F1E627CB500F59615 /* TableViewCell.xib in Resources */,
 				CB82AD9E1E622B7A00B85094 /* LaunchScreen.storyboard in Resources */,
 				CB82AD9B1E622B7A00B85094 /* Assets.xcassets in Resources */,
 			);
@@ -228,7 +238,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB82AD931E622B7A00B85094 /* ViewController.swift in Sources */,
+				CB37838D1E627C9600F59615 /* TableViewCell.swift in Sources */,
 				CB595E7F1E6274DC0019ECA6 /* GroupsTableViewController.swift in Sources */,
+				CB3783911E62850700F59615 /* GroupUsersTableViewController.swift in Sources */,
 				CB82AD991E622B7A00B85094 /* hackbu17ipapp.xcdatamodeld in Sources */,
 				CB595E811E62757C0019ECA6 /* Group.swift in Sources */,
 				CB82AD911E622B7A00B85094 /* AppDelegate.swift in Sources */,

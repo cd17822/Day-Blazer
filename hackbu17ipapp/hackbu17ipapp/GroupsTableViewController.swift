@@ -17,17 +17,31 @@ class GroupsTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        createFakeData()
+        configureNib()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Testing
+    
+    func createFakeData() {
+        data.append(Group(id: "1782217822", name: "Squad"))
+    }
 
     // MARK: - Table view data source
 
+    func configureNib() {
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+    }
+    
+    @IBAction func camTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -37,10 +51,12 @@ class GroupsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
 
-        let group = data[(indexPath as IndexPath.row)]
-        cell.group_label.text = group.name
+        let group = data[(indexPath as NSIndexPath).row]
+        cell.label1.text = ""
+        cell.label2.text = ""
+        cell.label3.text = group.name
 
         return cell
     }
@@ -82,7 +98,7 @@ class GroupsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "GroupsToUsers", sender: data[(indexPath as NSIndexPath).row])
+        performSegue(withIdentifier: "GroupsToGroupUsers", sender: data[(indexPath as NSIndexPath).row])
     }
     
     /*

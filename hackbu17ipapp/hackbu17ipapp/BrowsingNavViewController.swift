@@ -12,8 +12,7 @@ class BrowsingNavViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.barTintColor = UIColor.red //DOESNT WORK
-        // Do any additional setup after loading the view.
+        navigationBar.tintColor = UIColor.red //DOESNT WORK
     }
 
     override func didReceiveMemoryWarning() {
